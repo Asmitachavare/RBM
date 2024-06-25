@@ -51,13 +51,60 @@
 
       gtag("config", "G-7ZDHJZCXXS");
     </script>
-    <style>
-      .pf{
-        -webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	position: relative;
-      }
+  
+
+  <style>
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 50px;
+
+    }
+
+
+    .floating-button {
+  padding: 10px;
+  border-radius: 5px;
+  animation: pulse 1s infinite;
+}
+
+
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.floating-button:after, 
+.floating-button:before {
+  width: 100%;
+  height: 100%;
+  border-radius: 5%;
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+   -webkit-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+   -webkit-animation-delay: .9s;
+   animation-delay: .9s;
+   content: "";
+   position: absolute;
+   -webkit-box-shadow: 0 0 0 0 rgba(235, 98, 35, 0.9);
+   box-shadow: 0 0 0 0 rgba(224, 65, 37, 0.9);
+   -webkit-animation: ripple 3s infinite;
+   animation: ripple 3s infinite;
+   -webkit-transition: all .4s ease;
+   transition: all .4s ease;
+}
+.floating-button:after {
+  -webkit-animation-delay: .6s;
+  animation-delay: .6s;
+}
       .box{
   padding: 10px;     
 	border-radius: 10px;
@@ -87,7 +134,31 @@
 	padding: 0 20px;
  
 }
-    </style>
+
+@media only screen and (max-width: 1140px) {
+  /* Apply styles to the div here */
+  .line {
+    display: none;
+  }
+}
+
+.member-img {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .member-img img {
+    transition: transform 0.3s ease;
+  }
+
+  .member-img:hover img {
+    transform: scale(1.1);
+  }
+
+ 
+
+  </style>
+
   </head>
 
   <!-- page wrapper -->
@@ -101,6 +172,7 @@
             <div class="animation-preloader">
               <div class="spinner"></div>
               <div class="txt-loading">
+                <span data-text-preloader="A" class="letters-loading"> A </span>
                 <span data-text-preloader="R" class="letters-loading"> R </span>
                 <span data-text-preloader="B" class="letters-loading"> B </span>
                 <span data-text-preloader="M" class="letters-loading"> M </span>
@@ -114,47 +186,6 @@
       <!-- main header -->
       <header class="main-header">
         <!-- header-top -->
-        <div class="header-top">
-          <div class="top-inner clearfix">
-            <div class="left-column pull-left">
-              <ul class="info clearfix">
-                <li><i class="far fa-map-marker-alt"></i>Navale Icon, Pune</li>
-                <li><i class="far fa-clock"></i>Mon - Fri 9.00 - 5.00</li>
-                <li>
-                  <i class="far fa-phone"></i
-                  ><a href="tel:7263968850">+91 7263968850</a>
-                </li>
-              </ul>
-            </div>
-            <div class="right-column pull-right">
-              <ul class="social-links clearfix">
-                <li>
-                  <a
-                    href=" https://www.facebook.com/profile.php?id=10009167171653"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href=" https://www.linkedin.com/company/94208437"
-                    ><i class="fab fa-linkedin"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.youtube.com/@aarohiinfofimangement/playlists"
-                    ><i class="fab fa-youtube"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.instagram.com/realestate_banking_management/"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
         <!-- header-lower -->
         <div class="header-lower">
           <div class="outer-box">
@@ -162,8 +193,7 @@
               <div class="logo-box">
                 <figure class="logo">
                   <a href="index.html"
-                    ><img src="assets/images/RBM_White_Logo.png" alt=""width= "156%" height="83px"
-                  /></a>
+                    ><img src="assets/images/rbm.png" alt="" style='width:226px ;height:100px' /></a>
                 </figure>
               </div>
               <div class="menu-area clearfix">
@@ -179,10 +209,16 @@
                     id="navbarSupportedContent"
                   >
                     <ul class="navigation clearfix">
-                      <li class="current">
+                      <li>
+                        <a href="http://rbm.aitpro.in/">
+                          <button class="floating-button text-light" style="background-color: #ff4800;">RealTech
+                          </button></a>            
+                          </li>
+                      <li class="">
                         <a href="index.html"><span>Home</span></a>
                       </li>
-                      <li class="">
+                      
+                      <!-- <li class="">
                         <a href="about.html"><span>About us</span></a>
                       </li>
                       <li class="">
@@ -194,15 +230,60 @@
                           <li><a href="dev.html">For Developers</a></li>
                           <li><a href="invest.html">For Investors</a></li>
                         </ul>
+                      </li> -->
+                      <li class="">
+                        <a href="dev.html"><span>Builders & Developers</span></a>
                       </li>
                       <li class="">
-                        <a href="property-grid.html"><span>Projects</span></a>
+                        <a href="invest.html"><span>Buyers & Investors</span></a>
                       </li>
-                      
+                      <!-- <li class="">
+                        <a href="property-grid.html"><span>Projects</span></a>
+                      </li> -->
+                      <!-- <li class="dropdown">
+                        <a href="services.html"><span>Internet Banking</span></a>
+                        <ul>
+                          <li><a href="">Account Openning</a></li>
+                          <li><a href="https://banking.ssdmultistate.com/login">Net Banking</a></li>
+                        </ul>
+                      </li> -->
+                      <li class="">
+                        <a href="https://ssdmultistate.com/"><span>SSD Multistate</span></a>
+                      </li>
+                      <!-- <li class="">
+                        <a href="https://prop.vu/the_leisure_lagoons"><span>Virtual Projects Tour</span></a>
+                      </li> -->
+                      <!-- <li class="dropdown">
+                        <a href="services.html"><span>Fintech</span></a>
+                        <ul>
+                          <li><a href="">Account Openning</a></li>
+                          <li><a href="https://http://rbm.aitpro.in">Digital Investment Dashboard</a></li>
+                        </ul>
+                      </li> -->
                       <li>
                         <a href="contact.html"><span>Contact</span></a>
                       </li>
+                    
+                      <!-- <li class="  " >
+                      <a href="http://rbm.aitpro.in/">
+                        <button class="btn pl-2 floating-button text-light" style="background-color: #ff4800;" ><span>Fintech</span></button> 
+                      </a>
+                      </li> -->
+                     
+                      </ul>
+                      
                     </ul>
+                    
+                    <!-- <div class="dropdown">
+                      <button class="dropbtn floating-button" style="right: -856px;top:-104px; background-color: #ff4800;">Fintech</button>
+                      <div class="dropdown-content" style="right:-875 !important;">
+                        <a href="#">Account Opening</a>
+                        <a href="#">Net Banking</a>
+                      </div>
+                    </div> -->
+
+                   
+            
                   </div>
                 </nav>
               </div>
@@ -217,10 +298,11 @@
               <div class="logo-box">
                 <figure class="logo">
                   <a href="index.html"
-                    ><img src="assets/images/RBM_White_Logo.png" alt="" width= "156%" height="83px"
+                    ><img src="assets/images/rbm.png" alt=""width= "117%" height="70px"
                   /></a>
                 </figure>
               </div>
+             
               <div class="menu-area clearfix">
                 <nav class="main-menu clearfix">
                   <!--Keep This Empty / Menu will come through Javascript-->
@@ -290,31 +372,7 @@
 
       <!-- End Mobile Menu -->
 
-      <!--Page Title-->
-      <!--Page Title-->
-      <section class="page-title-two bg-color-1 centred">
-        <div class="pattern-layer">
-          <div
-            class="pattern-1"
-            style="background-image: url(assets/images/shape/shape-9.jpg)"
-          ></div>
-          <div
-            class="pattern-2"
-            style="background-image: url(assets/images/shape/shape-10.jpg)"
-          ></div>
-        </div>
-        <div class="auto-container">
-          <div class="content-box clearfix">
-            <h1>About Us</h1>
-            <ul class="bread-crumb clearfix">
-              <li><a href="index.html">Home</a></li>
-              <li>About Us</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <!--End Page Title-->
-      <!--End Page Title-->
+     
 
       <!-- about-section -->
       <section class="about-section about-page pb-0 pt-3">
@@ -367,7 +425,7 @@
       <!-- about-section end -->
 
       <!-- team-section -->
-      <section class="team-section sec-pad centred">
+      <!-- <section class="team-section sec-pad centred">
         <div class="auto-container">
           <div class="sec-title">
             <h2>Board Of Directors</h2>
@@ -433,14 +491,14 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- team-section end -->
 
 
 
 
       <!-- Process Flow -->
-      <section style="background-color: #f1f1f1;min-width: 1300px;" class="p-3">
+      <section style="background-color: #f1f1f1;" class="p-3">
         <div class="auto-container">
           <div class="sec-title text-center">
             <h2>Process Flow</h2>
@@ -448,57 +506,57 @@
 
           <div class="row content flex d-flex gap-3 justify-content-center">
          
-              <div class="box col-2 m-4" style="background-image: -moz-linear-gradient(-45deg,  rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%) ">
+              <div class="box col-lg-2 col-md-3 col-sm-4 m-4" style="background-image: -moz-linear-gradient(-45deg,  rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%) ">
                 Builder <br>Account<br> opening<br> in SSD
               </div>
 
              
 
-              <div class="box col-2 m-4 d-flex align-items-center justify-content-center" style="background-image: -moz-linear-gradient(-45deg,  #FFD600  0%, rgba(0,0,0,0) 100%) ">
+              <div class="box col-lg-2 col-md-3 col-sm-4 m-4 d-flex align-items-center justify-content-center" style="background-image: -moz-linear-gradient(-45deg,  #FFD600  0%, rgba(0,0,0,0) 100%) ">
                 Project <br>report<br> submission
               </div>
 
-              <div class="box col-2 m-4 d-flex align-items-center justify-content-center" style="background-image: -moz-linear-gradient(-45deg,  #AAD4E7  0%, rgba(0,0,0,0) 100%) ">
+              <div class="box col-lg-2 col-md-3 col-sm-4 m-4 d-flex align-items-center justify-content-center" style="background-image: -moz-linear-gradient(-45deg,  #AAD4E7  0%, rgba(0,0,0,0) 100%) ">
                 Due <br>Diligence
               </div>
            
 
-              <div class="box col-2 m-4 d-flex align-items-center justify-content-center" style="background-image: -moz-linear-gradient(-45deg,  #FDB0FD  0%, rgba(0,0,0,0) 100%) ">
+              <div class="box col-lg-2 col-md-3 col-sm-4 m-4 d-flex align-items-center justify-content-center" style="background-image: -moz-linear-gradient(-45deg,  #FDB0FD  0%, rgba(0,0,0,0) 100%) ">
                 Builder <br>Deposit
               </div>
 
           </div>
-          <div style="position:relative;border:1px solid black; width:31px; top:-94px;left:338px;height: 0px;"></div>
-          <div style="position:relative;border:1px solid black; width:31px; top:-94px;left:570px;height: 0px;"></div>
-          <div style="position:relative;border:1px solid black; width:31px; top:-94px;left:802px;height: 0px;"></div>
+          <div style="position:relative;border:1px solid black; width:31px; top:-94px;left:338px;height: 0px;" class="line"></div>
+          <div style="position:relative;border:1px solid black; width:31px; top:-94px;left:570px;height: 0px;" class="line"></div>
+          <div style="position:relative;border:1px solid black; width:31px; top:-94px;left:802px;height: 0px;" class="line"></div>
 
-          <div style="position:relative;border:1px solid black; height:35px;width:0px; top:-10px;left:931px;"></div>
-          <div style="position:relative;border:1px solid black; height:0px;width:696px; top:-10px;left:237px;"></div>
+          <div style="position:relative;border:1px solid black; height:35px;width:0px; top:-10px;left:931px;" class="line"></div>
+          <div style="position:relative;border:1px solid black; height:0px;width:696px; top:-10px;left:237px;" class="line"></div>
 
-          <div style="position:relative;border:1px solid black; height:35px;width:0px; top:-11px;left:237px;"></div>
+          <div style="position:relative;border:1px solid black; height:35px;width:0px; top:-11px;left:237px;" class="line"></div>
 
-          <div style="position:relative;border:1px solid black; width:31px; top:99px;left:338px;height: 0px;"></div>
-          <div style="position:relative;border:1px solid black; width:31px; top:99px;left:570px;height: 0px;"></div>
-          <div style="position:relative;border:1px solid black; width:31px; top:99px;left:802px;height: 0px;"></div>
+          <div style="position:relative;border:1px solid black; width:31px; top:99px;left:338px;height: 0px;" class="line"></div>
+          <div style="position:relative;border:1px solid black; width:31px; top:99px;left:570px;height: 0px;" class="line"></div>
+          <div style="position:relative;border:1px solid black; width:31px; top:99px;left:802px;height: 0px;" class="line"></div>
 
 
           <div class="row content flex d-flex gap-3 justify-content-center" class="position:relative;top:-46px!important">
          
-            <div class="box col-2 m-4 d-flex align-items-center justify-content-center" style="background-image: -moz-linear-gradient(-45deg,  rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%) ">
+            <div class="box col-lg-2 col-md-3 col-sm-4 m-4 d-flex align-items-center justify-content-center" style="background-image: -moz-linear-gradient(-45deg,  rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%) ">
               Builder <br>Credit<br> Line
             </div>
 
 
-            <div class="box col-2 m-4 d-flex align-items-center justify-content-center" style="background-image: -moz-linear-gradient(-45deg,  #FFD600  0%, rgba(0,0,0,0) 100%) ">
+            <div class="box col-lg-2 col-md-3 col-sm-4 m-4 d-flex align-items-center justify-content-center" style="background-image: -moz-linear-gradient(-45deg,  #FFD600  0%, rgba(0,0,0,0) 100%) ">
               Builder <br>Invoice
             </div>
 
-            <div class="box col-2 m-4 d-flex align-items-center justify-content-center" style="background-image: -moz-linear-gradient(-45deg,  #AAD4E7  0%, rgba(0,0,0,0) 100%) ">
+            <div class="box col-lg-2 col-md-3 col-sm-4 m-4 d-flex align-items-center justify-content-center" style="background-image: -moz-linear-gradient(-45deg,  #AAD4E7  0%, rgba(0,0,0,0) 100%) ">
               Invoice <br>Validation
             </div>
          
 
-            <div class="box col-2 m-4 d-flex align-items-center justify-content-center" style="background-image: -moz-linear-gradient(-45deg,  #FDB0FD  0%, rgba(0,0,0,0) 100%) ">
+            <div class="box col-lg-2 col-md-3 col-sm-4 m-4 d-flex align-items-center justify-content-center" style="background-image: -moz-linear-gradient(-45deg,  #FDB0FD  0%, rgba(0,0,0,0) 100%) ">
               Payment
             </div>
 
@@ -508,67 +566,10 @@
       </section>
       <!-- Process Flow End -->
 
-      <!-- Builder Proposal -->
-      <section class="p-3 m-3">
-        <div class="auto-container">
-          <div class="sec-title text-center">
-            <h2>Builder Proposal</h2>
-          </div>
-          <div class="row">
-            <div class="col-md-4 flex d-flex align-items-center">
-              <div class="rounded-circle d-flex justify-content-center align-items-center m-1 shadow"style="height: 50px;width: 50px;background-color: orange;"><i class="fas fa-th-list text-light" style="font-size: 24px;"></i></div>
-             <div style="width: 300px;"> <h5>Process of risk mitigation</h5></div> 
-            </div>
-
-            <div class="col-md-4 flex d-flex align-items-center">
-              <div class="rounded-circle d-flex justify-content-center align-items-center m-1 shadow"style="height: 50px;width: 50px;background-color: #C70039 ;"><i class="fas fa-building text-light" style="font-size: 24px;"></i></div>
-              <div style="width: 300px;"> <h5>Builder must have invested in land</h5></div>
-            </div>
-
-            <div class="col-md-4 flex d-flex align-items-center">
-              <div class="rounded-circle d-flex justify-content-center align-items-center m-1 shadow"style="height: 50px;width: 50px;background-color:  #581845 ;"><i class="fas fa-clipboard-user text-light" style="font-size: 24px;"></i></div>
-              <div style="width: 300px;"><h5>Builder has to open an account in SSD</h5></div>
-            </div>
-
-          </div>
-         
-          <div class="row mt-4">
-            <div class="col-md-4 flex d-flex align-items-center">
-              <div class="rounded-circle d-flex justify-content-center align-items-center m-1 shadow"style="height: 50px;width: 50px;background-color: #4fa334;"><i class="fas fa-file text-light" style="font-size: 24px;"></i></div>
-              <div style="width: 300px;"> <h5>Builder needs to submit the project report of the project</h5></div>
-            </div>
-
-            <div class="col-md-4 flex d-flex align-items-center">
-              <div class="rounded-circle d-flex justify-content-center align-items-center m-1 shadow"style="height: 50px;width: 50px;background-color: #0c9926;"><i class="fas fa-running text-light" style="font-size: 24px;"></i></div>
-              <div style="width: 300px;"> <h5>Builder has to  deposit 10% of project in 15 days</h5></div>
-            </div>
-
-            <div class="col-md-4 flex d-flex align-items-center">
-              <div class="rounded-circle d-flex justify-content-center align-items-center m-1 shadow"style="height: 50px;width: 50px;background-color: #85a92e;"><i class="fas fa-credit-card text-light" style="font-size: 24px;"></i></div>
-              <div style="width: 300px;">  <h5>Builder will receive 20% credit line  in next 30 days after depositing the 20% or the double of the deposited amount</h5></div>
-            </div>
-
-          </div>
-
-          <div class="row mt-4">
-            <div class="col-md-4 flex d-flex align-items-center">
-              <div class="rounded-circle d-flex justify-content-center align-items-center m-1 shadow"style="height: 50px;width: 50px;background-color: #9348b6;"><i class="fas fa-badge-check text-light" style="font-size: 24px;"></i></div>
-              <div style="width: 300px;"> <h5>Builder can only use credit line in the same project</h5></div>
-            </div>
-
-            <div class="col-md-4 flex d-flex align-items-center">
-              <div class="rounded-circle d-flex justify-content-center align-items-center m-1 shadow"style="height: 50px;width: 50px;background-color: #145b8c;"><i class="fas fa-screwdriver text-light" style="font-size: 24px;"></i></div>
-              <div style="width: 300px;"> <h5>Builder has to  deposit 10% of project in 15 days</h5></div>
-            </div>
-
-          </div>
-        
-        </div>
-      </section>
-      <!-- Builder Proposal -->
+    
 
 <!-- Builder Proposal Process Flow -->
-<section style="background-color: #f1f1f1;min-width: 1300px;" class="p-3">
+<!-- <section style="background-color: #f1f1f1;min-width: 1300px;" class="p-3">
   <div class="auto-container">
     <div class="sec-title text-center">
       <h2>Builder Proposal Process Flow</h2>
@@ -633,7 +634,7 @@
   </div>
   
   </div>
-</section>
+</section> -->
 <!-- Builder Proposal Process Flow -->
 
 
@@ -650,11 +651,11 @@
         <img src="./assets/images/terms.jpg" style="width:300px;height:370px">
       </div>
       <div class="fles d-flex flex-column"> 
-        <div style="background-color: #AAD4E7;" class="p-3 rounded shadow m-2"><strong>Builder will receive without interest credit line</strong></div>
-        <div style="background-color: #AAD4E7;" class="p-3 rounded shadow m-2">On time funds and risk mitigation process from bank</div>
-        <div style="background-color: #AAD4E7;" class="p-3 rounded shadow m-2">No other charges </div>
-        <div style="background-color: #AAD4E7;" class="p-3 rounded shadow m-2">Builder will return the inventory of same amount but 30% less than the market price.</div>
-        <div style="background-color: #AAD4E7;" class="p-3 rounded shadow m-2">Builder will share the sales rights of the same amount of  at the time of signing an agreement. </div>
+        <div style="background-color: #0b2032;" class="p-3 rounded shadow m-2 text-light "><strong>Builder will receive without interest credit line</strong></div>
+        <div style="background-color: #0b2032;" class="p-3 rounded shadow m-2 text-light">On time funds and risk mitigation process from bank</div>
+        <div style="background-color: #0b2032;" class="p-3 rounded shadow m-2 text-light">No other charges </div>
+        <div style="background-color: #0b2032;" class="p-3 rounded shadow m-2 text-light">Builder will return the inventory of same amount but 30% less than the market price.</div>
+        <div style="background-color: #0b2032;" class="p-3 rounded shadow m-2 text-light">Builder will share the sales rights of the same amount of  at the time of signing an agreement. </div>
        
       </div>
     </div>
@@ -665,180 +666,106 @@
 <!-- Terms and Return -->
 
 
-      <!-- download-section -->
-      <section class="download-section bg-color-3">
-        <div
-          class="pattern-layer"
-          style="background-image: url(assets/images/shape/shape-3.jpg)"
-        ></div>
-        <div class="auto-container">
-          <div class="row clearfix real-wrap">
-            <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-              <h2>REAL ESTATE BANKING MANAGEMENT</h2>
-              <p>
-                Real estate banking management is the concept where AFI
-                management limited (financial institute) and construction
-                companies coming together to address the issue of decline of
-                real estate industry.
-              </p>
+<section class="property-page-section property-grid">
+  <div class="auto-container">
+    
+    <div class="container">
+      <div class="row gy-4">
+
+        <div class="col-lg-4 col-md-6 "data-aos="zoom-in-up">
+          <div class="team-member">
+            <div class="member-img">
+              <img src="assets/images/SUDHANSHU SIR..jpg" class="img-fluid" alt="">
+            
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 content-column">
-              <div class="content_block_1">
-                <div class="content-box">
-                  <h2>Our Social Networks</h2>
-                  <div class="download-btn">
-                    <a
-                      href="https://www.facebook.com/profile.php?id=100091671716534"
-                      class="app-store"
-                    >
-                      <i class="fab fa-facebook-f"></i>
-                      <p>Facebook</p>
-                    </a>
-                    <a
-                      href="https://www.instagram.com/realestate_banking_management/"
-                      class="google-play"
-                    >
-                      <i class="fab fa-instagram"></i>
-                      <p>Instagram</p>
-                    </a>
-                    <a
-                      href="https://www.youtube.com/@aarohiinfofimangement/playlists"
-                      class="google-play"
-                    >
-                      <i class="fab fa-youtube"></i>
-                      <p>Youtube</p>
-                    </a>
-                    <a href="https://www.linkedin.com/company/94208437">
-                      <i class="fab fa-linkedin"></i>
-                      <p>Linkedin</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
+            <div class="member-info mt-3">
+              <h4>Mr.Sudhanshu Sharma</h4>
+              <span>Chairman - Aarohiinfo Group</span>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- download-section end -->
+        </div><!-- End Team Member -->
+
+        <div class="col-lg-4 col-md-6 "data-aos="zoom-in-up">
+          <div class="team-member">
+            <div class="member-img">
+              <img src="assets/images/anil sir.jpg" class="img-fluid" alt="">
+             
+            </div>
+            <div class="member-info mt-3">
+              <h4>Mr. Anil Kulkarni</h4>
+              <span>Managing Director-AFIML</span>
+            </div>
+          </div>
+        </div><!-- End Team Member -->
+
+        <div class="col-lg-4 col-md-6 "data-aos="zoom-in-up">
+          <div class="team-member">
+            <div class="member-img">
+              <img src="assets/images/kaka12.jpg" class="img-fluid" alt="">
+            
+            </div>
+            <div class="member-info mt-3">
+              <h4>Mr.Sharad Jejurkar</h4>
+              <span>Executive Director</span>
+            </div>
+          </div>
+        </div><!-- End Team Member -->
+        
+    </div>
+
+  </div>
+</section>
 
       <!-- main-footer -->
       <footer class="main-footer">
-        <div class="footer-top bg-color-2">
-          <div class="auto-container">
-            <div class="row clearfix">
-              <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget about-widget">
-                  <div class="widget-title">
-                    <h3>About</h3>
-                  </div>
-                  <div class="text">
-                    <p>
-                      We are dedicated to providing you with the best possible
-                      resources and services to help you manage your real estate
-                      banking needs...
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget links-widget ml-70">
-                  <div class="widget-title">
-                    <h3>Links</h3>
-                  </div>
-                  <div class="widget-content">
-                    <ul class="links-list class">
-                      <li><a href="about.html">About Us</a></li>
-                      <li><a href="services.html">Services</a></li>
-                      <li><a href="dev.html">For Developers</a></li>
-                      <li><a href="invest.html">For Investors</a></li>
-                      <li><a href="why.html">Why Choose Us</a></li>
-                      <li><a href="property-grid.html">Projects</a></li>
-                      <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget post-widget">
-                  <div class="widget-title">
-                    <h3>Socials Links</h3>
-                  </div>
-                  <ul class="f-social">
-                    <li>
-                      <a
-                        href="https://www.facebook.com/profile.php?id=100091671716534"
-                        ><i class="fab fa-facebook-f"></i
-                        ><span>Facebook</span></a
-                      >
-                    </li>
-                    <li>
-                      <a href=" https://www.linkedin.com/company/94208437"
-                        ><i class="fab fa-linkedin"></i><span>Linkedin</span></a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.youtube.com/@aarohiinfofimangement/playlists"
-                        ><i class="fab fa-youtube"></i><span>Youtube</span></a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.instagram.com/realestate_banking_management/"
-                        ><i class="fab fa-instagram"></i
-                        ><span>Instagram</span></a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget contact-widget">
-                  <div class="widget-title">
-                    <h3>Contacts</h3>
-                  </div>
-                  <div class="widget-content">
-                    <ul class="info-list clearfix">
-                      <li>
-                        <i class="fas fa-map-marker-alt"></i>Sr. No 51/2A,
-                        Navale Icon 3rd floor Office No. 301, Opp Navale Bridge,
-                        Mumbai-Bangalore Highway, Narhe Pune, Maharashtra
-                        411041.
-                      </li>
-                      <li>
-                        <i class="fas fa-microphone"></i
-                        ><a href="tel:7263968850">+91 7263968850</a>
-                      </li>
-                      <li>
-                        <i class="fas fa-envelope"></i
-                        ><a href="deepaktirveer@ssdmultistate.com"
-                          >deepaktirveer@ssdmultistate.com</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
         <div class="footer-bottom">
-          <div class="auto-container">
-            <div class="inner-box clearfix">
-              <figure class="footer-logo">
-                <a href="index.html"
-                  ><img src="assets/images/RBM LOGO PNG-01.jpg" alt=""
-                /></a>
-              </figure>
-              <div class="copyright pull-left">
-                <p>
-                  <a href="index.html">RBM</a> &copy; 2023 All Right Reserved
-                </p>
+          <div class="row">
+            <div class="col-lg-2 col-12 d-flex justify-content-center align-items-center my-2 flex-column">
+             <img src="./assets/images/rbm.png" class="footer-logo-img">
+              <div class="ml-2">
+                <a href=" https://www.facebook.com/profile.php?id=100091671716534"><i
+                  class="fab fa-facebook-f m-1" style="color: #0b2032;"></i></a>
+      <a href="https://www.linkedin.com/company/94208437">
+        <i class="fab fa-linkedin m-1"  style="color: #0b2032;"></i></a>
+    <a href="https://www.youtube.com/@aarohiinfofimangement/playlists"><i
+                  class="fab fa-youtube m-1"  style="color: #0b2032;"></i></a>
+      <a href="https://www.instagram.com/realestate_banking_management/"><i
+                  class="fab fa-instagram m-1"  style="color: #0b2032;"></i></a>
               </div>
             </div>
+            <div class="col-lg-5 col-12 d-flex justify-content-center align-items-center my-2">
+              <p style="text-align: center;">
+                Sr. No 51/2A,
+                          Navale Icon 3rd floor Office No. 301, Opp Navale Bridge,
+                          Mumbai-Bangalore Highway, Narhe Pune, Maharashtra
+                          411041.
+              </p>
+            </div>
+  
+            <div class="col-lg-3 col-12 d-flex justify-content-center align-items-center my-2 text-center">
+              <ul>
+                <li>
+                  <i class="fas fa-microphone m-1"></i
+                  ><a href="tel:7263968850">+91 7263968850</a>
+                </li>
+                <li>
+                  <i class="fas fa-envelope m-1"></i
+                  ><a href="deepaktirveer@ssdmultistate.com"
+                    >deepaktirveer@ssdmultistate.com</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-2 col-12 d-flex justify-content-center align-items-center my-2">
+              <p style="font-size: 18px;font-weight: 500;">
+                Powered by AIT
+              </p>
+            </div>
+            
           </div>
         </div>
-      </footer>
+      </footer> 
       <!-- main-footer end -->
 
       <!--Scroll to top-->

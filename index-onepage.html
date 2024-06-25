@@ -19,6 +19,61 @@
       rel="stylesheet"
     />
 
+    <style>
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding-top: 50px;
+    
+      }
+    
+    
+      .floating-button {
+    padding: 10px;
+    border-radius: 5px;
+    animation: pulse 1s infinite;
+    }
+    
+    
+    
+    @keyframes pulse {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.05);
+    }
+    }
+    
+    .floating-button:after, 
+    .floating-button:before {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+     -webkit-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+     -webkit-animation-delay: .9s;
+     animation-delay: .9s;
+     content: "";
+     position: absolute;
+     -webkit-box-shadow: 0 0 0 0 rgba(235, 98, 35, 0.9);
+     box-shadow: 0 0 0 0 rgba(224, 65, 37, 0.9);
+     -webkit-animation: ripple 3s infinite;
+     animation: ripple 3s infinite;
+     -webkit-transition: all .4s ease;
+     transition: all .4s ease;
+    }
+    .floating-button:after {
+    -webkit-animation-delay: .6s;
+    animation-delay: .6s;
+    }
+    </style>
+    
+
     <!-- Stylesheets -->
     <link href="assets/css/font-awesome-all.css" rel="stylesheet" />
     <link href="assets/css/flaticon.css" rel="stylesheet" />
@@ -117,45 +172,6 @@
       <!-- main header -->
       <header class="main-header">
         <!-- header-top -->
-        <div class="header-top">
-          <div class="top-inner clearfix">
-            <div class="left-column pull-left">
-              <ul class="info clearfix">
-                <li>
-                  <i class="far fa-map-marker-alt"></i>Discover St, New York, NY
-                  10012, USA
-                </li>
-                <li><i class="far fa-clock"></i>Mon - Sat 9.00 - 18.00</li>
-                <li>
-                  <i class="far fa-phone"></i
-                  ><a href="tel:2512353256">+251-235-3256</a>
-                </li>
-              </ul>
-            </div>
-            <div class="right-column pull-right">
-              <ul class="social-links clearfix">
-                <li>
-                  <a href="index.html"><i class="fab fa-facebook-f"></i></a>
-                </li>
-                <li>
-                  <a href="index.html"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li>
-                  <a href="index.html"><i class="fab fa-pinterest-p"></i></a>
-                </li>
-                <li>
-                  <a href="index.html"><i class="fab fa-google-plus-g"></i></a>
-                </li>
-                <li>
-                  <a href="index.html"><i class="fab fa-vimeo-v"></i></a>
-                </li>
-              </ul>
-              <div class="sign-box">
-                <a href="signin.html"><i class="fas fa-user"></i>Sign In</a>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- header-lower -->
         <div class="header-lower">
           <div class="outer-box">
@@ -163,8 +179,7 @@
               <div class="logo-box">
                 <figure class="logo">
                   <a href="index.html"
-                    ><img src="assets/images/logo.jpg" alt=""
-                  /></a>
+                    ><img src="assets/images/rbm.png" alt="" width= "117%" height="70px" /></a>
                 </figure>
               </div>
               <div class="menu-area clearfix">
@@ -179,32 +194,84 @@
                     class="collapse navbar-collapse show clearfix"
                     id="navbarSupportedContent"
                   >
-                    <ul class="navigation scroll-nav clearfix">
-                      <li class="dropdown">
-                        <a href="index-onepage.html">Home</a>
-                        <ul>
-                          <li><a href="index.html">Main Home</a></li>
-                          <li><a href="index-2.html">Home Modern</a></li>
-                          <li><a href="index-3.html">Home Map</a></li>
-                          <li><a href="index-4.html">Home Half Map</a></li>
-                          <li><a href="index-5.html">Home Agent</a></li>
-                          <li><a href="index-onepage.html">OnePage Home</a></li>
-                          <li><a href="index-rtl.html">RTL Home</a></li>
-                        </ul>
+                    <ul class="navigation clearfix">
+                      <li>
+                      <a href="https://prop.vu/test_project?reload=y">
+                        <button class="floating-button text-light" style="background-color: #ff4800;">Virtual Project Tour
+                        </button></a>            
+                        </li>
+                      <li class="current">
+                        <a href="index.html"><span>Home</span></a>
                       </li>
-                      <li><a href="#feature">Feature</a></li>
-                      <li><a href="#testimonial">Testimonial</a></li>
-                      <li><a href="#team">Team</a></li>
-                      <li><a href="#news">News</a></li>
-                      <li><a href="#footer">Footer</a></li>
+                      
+                      <!-- <li class="">
+                        <a href="about.html"><span>About us</span></a>
+                      </li>
+                      <li class="">
+                        <a href="why.html"><span>Why Choose Us</span></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="services.html"><span>Services</span></a>
+                        <ul>
+                          <li><a href="dev.html">For Developers</a></li>
+                          <li><a href="invest.html">For Investors</a></li>
+                        </ul>
+                      </li> -->
+                      <li class="">
+                        <a href="dev.html"><span>Builders & Developers</span></a>
+                      </li>
+                      <li class="">
+                        <a href="invest.html"><span>Buyers & Investors</span></a>
+                      </li>
+                      <!-- <li class="">
+                        <a href="property-grid.html"><span>Projects</span></a>
+                      </li> -->
+                      <!-- <li class="dropdown">
+                        <a href="services.html"><span>Internet Banking</span></a>
+                        <ul>
+                          <li><a href="">Account Openning</a></li>
+                          <li><a href="https://banking.ssdmultistate.com/login">Net Banking</a></li>
+                        </ul>
+                      </li> -->
+                      <li class="">
+                        <a href="https://ssdmultistate.com/"><span>SSD Multistate</span></a>
+                      </li>
+                      <!-- <li class="">
+                        <a href="https://prop.vu/the_leisure_lagoons"><span>Virtual Projects Tour</span></a>
+                      </li> -->
+                      <!-- <li class="dropdown">
+                        <a href="services.html"><span>Fintech</span></a>
+                        <ul>
+                          <li><a href="">Account Openning</a></li>
+                          <li><a href="https://http://rbm.aitpro.in">Digital Investment Dashboard</a></li>
+                        </ul>
+                      </li> -->
+                      <li>
+                        <a href="contact.html"><span>Contact</span></a>
+                      </li>
+                    
+                      <li class="  " >
+                      <a href="http://rbm.aitpro.in/">
+                        <button class="btn pl-2 floating-button text-light" style="background-color: #ff4800;" ><span>RealTech</span></button> 
+                      </a>
+                      </li>
+                     
+                      </ul>
+                      
                     </ul>
+                    
+                    <!-- <div class="dropdown">
+                      <button class="dropbtn floating-button" style="right: -856px;top:-104px; background-color: #ff4800;">Fintech</button>
+                      <div class="dropdown-content" style="right:-875 !important;">
+                        <a href="#">Account Opening</a>
+                        <a href="#">Net Banking</a>
+                      </div>
+                    </div> -->
+
+                   
+            
                   </div>
                 </nav>
-              </div>
-              <div class="btn-box">
-                <a href="index.html" class="theme-btn btn-one"
-                  ><span>+</span>Add Listing</a
-                >
               </div>
             </div>
           </div>
@@ -217,19 +284,15 @@
               <div class="logo-box">
                 <figure class="logo">
                   <a href="index.html"
-                    ><img src="assets/images/logo.jpg" alt=""
+                    ><img src="assets/images/rbm.png" alt=""width= "117%" height="70px"
                   /></a>
                 </figure>
               </div>
+             
               <div class="menu-area clearfix">
                 <nav class="main-menu clearfix">
                   <!--Keep This Empty / Menu will come through Javascript-->
                 </nav>
-              </div>
-              <div class="btn-box">
-                <a href="index.html" class="theme-btn btn-one"
-                  ><span>+</span>Add Listing</a
-                >
               </div>
             </div>
           </div>
@@ -1857,124 +1920,55 @@
       <!-- download-section end -->
 
       <!-- main-footer -->
-      <footer class="main-footer" id="footer">
-        <div class="footer-top bg-color-2">
-          <div class="auto-container">
-            <div class="row clearfix">
-              <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget about-widget">
-                  <div class="widget-title">
-                    <h3>About</h3>
-                  </div>
-                  <div class="text">
-                    <p>
-                      Lorem ipsum dolor amet consetetur adi pisicing elit sed
-                      eiusm tempor in cididunt ut labore dolore magna aliqua
-                      enim ad minim venitam
-                    </p>
-                    <p>
-                      Quis nostrud exercita laboris nisi ut aliquip commodo.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget links-widget ml-70">
-                  <div class="widget-title">
-                    <h3>Services</h3>
-                  </div>
-                  <div class="widget-content">
-                    <ul class="links-list class">
-                      <li><a href="index.html">About Us</a></li>
-                      <li><a href="index.html">Listing</a></li>
-                      <li><a href="index.html">How It Works</a></li>
-                      <li><a href="index.html">Our Services</a></li>
-                      <li><a href="index.html">Contact Us</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget post-widget">
-                  <div class="widget-title">
-                    <h3>Top News</h3>
-                  </div>
-                  <div class="post-inner">
-                    <div class="post">
-                      <figure class="post-thumb">
-                        <a href="blog-details.html"
-                          ><img
-                            src="assets/images/resource/footer-post-1.webp"
-                            alt=""
-                        /></a>
-                      </figure>
-                      <h5>
-                        <a href="blog-details.html"
-                          >The Added Value Social Worker</a
-                        >
-                      </h5>
-                      <p>Mar 25, 2020</p>
-                    </div>
-                    <div class="post">
-                      <figure class="post-thumb">
-                        <a href="blog-details.html"
-                          ><img
-                            src="assets/images/resource/footer-post-2.webp"
-                            alt=""
-                        /></a>
-                      </figure>
-                      <h5>
-                        <a href="blog-details.html">Ways to Increase Trust</a>
-                      </h5>
-                      <p>Mar 24, 2020</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget contact-widget">
-                  <div class="widget-title">
-                    <h3>Contacts</h3>
-                  </div>
-                  <div class="widget-content">
-                    <ul class="info-list clearfix">
-                      <li>
-                        <i class="fas fa-map-marker-alt"></i>Flat 20, Reynolds
-                        Neck, North Helenaville, FV77 8WS
-                      </li>
-                      <li>
-                        <i class="fas fa-microphone"></i
-                        ><a href="tel:23055873407">+2(305) 587-3407</a>
-                      </li>
-                      <li>
-                        <i class="fas fa-envelope"></i
-                        ><a href="mailto:info@example.com">info@example.com</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <footer class="main-footer">
+
         <div class="footer-bottom">
-          <div class="auto-container">
-            <div class="inner-box clearfix">
-              <figure class="footer-logo">
-                <a href="index.html"
-                  ><img src="assets/images/footer-logo.jpg" alt=""
-                /></a>
-              </figure>
-              <div class="copyright pull-left">
-                <p>
-                  <a href="index.html">Realshed</a> &copy; 2021 All Right
-                  Reserved
-                </p>
+          <div class="row">
+            <div class="col-lg-2 col-12 d-flex justify-content-center align-items-center my-2 flex-column">
+             <img src="./assets/images/rbm.png" class="footer-logo-img">
+              <div class="ml-2">
+                <a href=" https://www.facebook.com/profile.php?id=100091671716534"><i
+                  class="fab fa-facebook-f m-1" style="color: #0b2032;"></i></a>
+      <a href="https://www.linkedin.com/company/94208437">
+        <i class="fab fa-linkedin m-1"  style="color: #0b2032;"></i></a>
+    <a href="https://www.youtube.com/@aarohiinfofimangement/playlists"><i
+                  class="fab fa-youtube m-1"  style="color: #0b2032;"></i></a>
+      <a href="https://www.instagram.com/realestate_banking_management/"><i
+                  class="fab fa-instagram m-1"  style="color: #0b2032;"></i></a>
               </div>
             </div>
+            <div class="col-lg-5 col-12 d-flex justify-content-center align-items-center my-2">
+              <p style="text-align: center;">
+                Sr. No 51/2A,
+                          Navale Icon 3rd floor Office No. 301, Opp Navale Bridge,
+                          Mumbai-Bangalore Highway, Narhe Pune, Maharashtra
+                          411041.
+              </p>
+            </div>
+  
+            <div class="col-lg-3 col-12 d-flex justify-content-center align-items-center my-2 text-center">
+              <ul>
+                <li>
+                  <i class="fas fa-microphone m-1"></i
+                  ><a href="tel:7263968850">+91 7263968850</a>
+                </li>
+                <li>
+                  <i class="fas fa-envelope m-1"></i
+                  ><a href="deepaktirveer@ssdmultistate.com"
+                    >deepaktirveer@ssdmultistate.com</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-2 col-12 d-flex justify-content-center align-items-center my-2">
+              <p style="font-size: 18px;font-weight: 500;">
+                Powered by AIT
+              </p>
+            </div>
+            
           </div>
         </div>
-      </footer>
+      </footer>  
       <!-- main-footer end -->
 
       <!--Scroll to top-->

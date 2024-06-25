@@ -1,430 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    />
 
-    <title>RBM</title>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
-    <!-- Fav Icon -->
-    <link rel="icon" href="assets/images/logo-new.jpg" type="image/x-icon" />
+  <title>ARBM</title>
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Fav Icon -->
+  <link rel="icon" href="assets/images/logo-new.jpg" type="image/x-icon" />
 
-    <!-- Stylesheets -->
-    <link href="assets/css/font-awesome-all.css" rel="stylesheet" />
-    <link href="assets/css/flaticon.css" rel="stylesheet" />
-    <link href="assets/css/owl.css" rel="stylesheet" />
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet" />
-    <link href="assets/css/animate.css" rel="stylesheet" />
-    <link href="assets/css/jquery-ui.css" rel="stylesheet" />
-    <link href="assets/css/nice-select.css" rel="stylesheet" />
-    <link
-      href="assets/css/color/theme-color.css"
-      id="jssDefault"
-      rel="stylesheet"
-    />
-    <link href="assets/css/switcher-style.css" rel="stylesheet" />
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <link href="assets/css/responsive.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-7ZDHJZCXXS"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="assets/css/font-awesome-all.css" rel="stylesheet" />
+  <link href="assets/css/flaticon.css" rel="stylesheet" />
+  <link href="assets/css/owl.css" rel="stylesheet" />
+  <link href="assets/css/bootstrap.css" rel="stylesheet" />
+  <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet" />
+  <link href="assets/css/animate.css" rel="stylesheet" />
+  <link href="assets/css/jquery-ui.css" rel="stylesheet" />
+  <link href="assets/css/nice-select.css" rel="stylesheet" />
+  <link href="assets/css/color/theme-color.css" id="jssDefault" rel="stylesheet" />
+  <link href="assets/css/switcher-style.css" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/css/responsive.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Google tag (gtag.js) -->
+
+
+  <style>
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 50px;
+
+    }
+
+
+    .banner-style-two {
+  position: relative; /* Needed for absolute positioning of the button */
+}
+
+.floating-button {
+  padding: 10px;
+  border-radius: 5px;
+  animation: pulse 1s infinite;
+}
+
+
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.floating-button:after, 
+.floating-button:before {
+  width: 100%;
+  height: 100%;
+  border-radius: 5%;
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+   -webkit-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+   -webkit-animation-delay: .9s;
+   animation-delay: .9s;
+   content: "";
+   position: absolute;
+   -webkit-box-shadow: 0 0 0 0 rgba(235, 35, 35, 0.9);
+   box-shadow: 0 0 0 0 rgba(224, 37, 37, 0.9);
+   -webkit-animation: ripple 3s infinite;
+   animation: ripple 3s infinite;
+   -webkit-transition: all .4s ease;
+   transition: all .4s ease;
+}
+.floating-button:after {
+  -webkit-animation-delay: .6s;
+  animation-delay: .6s;
+}
+.pf{
+        -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
       }
-      gtag("js", new Date());
-
-      gtag("config", "G-7ZDHJZCXXS");
-    </script>
-
-    <style>
-         
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding-top: 50px;
-    
-  }
-
-  .custom-image{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin:0 auto;
-    
-    height:250px;
-
-  }
-  .card.img2{
-    background:  url("./assets/images/funding.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 200px;
-    width:350px;
-   
-  }
-  .card.img3{
-    
-    background:  url("./assets/images/analytics.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 200px;
-    width:350px;
-   
-  }
  
+      .content{
+	width: 100%;
+	max-width: 1142px;
+	margin: 0 auto;
+	padding: 0 20px;
  
-  .card.img4{
+}
 
-    background:  url("./assets/images/revenue.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 200px;
-    width:350px;
+@media only screen and (max-width: 1140px) {
+  /* Apply styles to the div here */
+  .line {
+    display: none;
+  }
+}
+.member-img {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .member-img img {
+    transition: transform 0.3s ease;
+  }
+
+  .member-img:hover img {
+    transform: scale(1.1);
+  }
+
+
+  </style>
+
+
+</head>
+
+<!-- page wrapper -->
+
+<body>
+  <div class="boxed_wrapper">
    
-    
-  }
- 
-  .card.img5{
-    padding: 5px;
-       /* border: 4px solid red; */
-    background:  url("./assets/images/construction.jpg");
-     background-repeat: no-repeat;
-    background-size: cover;
-    height: 200px;
-    width:350px;
    
-  }
-
-  .card.img6{
-    
-    background:  url("./assets/images/compliance.jpg");
-     background-repeat: no-repeat;
-    background-size: cover;
-    height: 200px;
-    width:350px;
-    
-  }
-
-  .card.img7{  
-    background:  url("./assets/images/team.jpg");
-     background-repeat: no-repeat;
-    background-size: cover;
-  }
- 
-
-  .card.img8{  
-    background:  url("./assets/images/bank.jpg");
-     background-repeat: no-repeat;
-    background-size: cover;
-  }
+      <!-- preloader  -->
+     
 
 
-  .card.img9{  
-    background:  url("./assets/images/model.jpg");
-     background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  
-  .card.img10{  
-    background:  url("./assets/images/sales.jpg");
-     background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .card.img11{  
-    background:  url("./assets/images/credit.jpg");
-     background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-.double-shadow {
-  text-shadow: 
-    2px 2px 2px rgba(0, 0, 0, 0.8), /* Inner shadow (darker) */
-    4px 4px 5px rgba(0, 0, 0, 0.3); /* Outer shadow (lighter) */
-}
-
-
-
-.card-option {
-  width: 200px;
-  height: 250px;
-  background-color: #4158D0;
-  background-image: linear-gradient(to top, #8c949f, #6d7889, #4f5d74, #33435f, #152b4a);
-  border-radius: 8px;
-  color: white;
-  overflow: hidden;
-  position: relative;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-  cursor: pointer;
-  margin: 10px;
-}
-
-.card-option-content {
-  padding: 20px;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  color: white;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 100%;
-}
-
-.card-option-content .card-title {
-  font-size: 25px;
-  font-weight: 900;
-  color: inherit;
-  text-transform: uppercase;
-}
-
-.card-option-content .card-para {
-  color: inherit;
-  opacity: 0.8;
-  font-size: 14px;
-}
-
-.card-option:hover {
-  transform: rotateY(10deg) rotateX(10deg) scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.card-option:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
-  transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-  z-index: 1;
-}
-
-.card-option:hover:before {
-  transform: translateX(-100%);
-}
-
-.card-option:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
-  transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-  z-index: 1;
-}
-
-.card-option:hover:after {
-  transform: translateX(100%);
-}
-
-
-
-
-
-.card-products {
-  width: 250px;
-  height: 130px;
-  background: lightgrey;
-  border: 3px inset white;
-  background: #e8e8e8;
-  box-shadow: inset 20px 20px 60px #c5c5c5, inset -20px -20px 60px #ffffff;
-  transition: all .5s ease-in-out;
-  border-radius: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bolder;
-  color: #8a8989;
-  font-size: 25px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-
-.card-products:hover {
-  transform: translateY(-5px);
-  transition: all .5s ease-in-out;
-}
-
-
-.ag-format-container {
-  width: 1142px;
-  margin: 0 auto;
-}
-
-
-
-.ag-courses_box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-
-  padding: 50px 0;
-}
-.ag-courses_item {
-  -ms-flex-preferred-size: calc(33.33333% - 30px);
-  flex-basis: calc(33.33333% - 30px);
-
-  margin: 0 15px 30px;
-
-  overflow: hidden;
-
-  border-radius: 28px;
-}
-.ag-courses-item_link {
-  display: block;
-  padding: 30px 20px;
-  background-color: #121212;
-
-  overflow: hidden;
-
-  position: relative;
-}
-.ag-courses-item_link:hover,
-.ag-courses-item_link:hover .ag-courses-item_date {
-  text-decoration: none;
-  color: #FFF;
-}
-.ag-courses-item_link:hover .ag-courses-item_bg {
-  -webkit-transform: scale(10);
-  -ms-transform: scale(10);
-  transform: scale(10);
-}
-.ag-courses-item_title {
-  min-height: 87px;
-  margin: 0 0 25px;
-  text-align: center;
-  overflow: hidden;
-
-  font-weight: bold;
-  font-size: 30px;
-  color: #FFF;
-
-  z-index: 2;
-  position: relative;
-}
-.ag-courses-item_date-box {
-  font-size: 18px;
-  color: #FFF;
-
-  z-index: 2;
-  position: relative;
-}
-.ag-courses-item_date {
-  font-weight: bold;
-  color: #f9b234;
-
-  -webkit-transition: color .5s ease;
-  -o-transition: color .5s ease;
-  transition: color .5s ease
-}
-.ag-courses-item_bg {
-  height: 128px;
-  width: 128px;
-  background-color: #f9b234;
-
-  z-index: 1;
-  position: absolute;
-  top: -75px;
-  right: -75px;
-
-  border-radius: 50%;
-
-  -webkit-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
-}
-.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
-  background-color: #3ecd5e;
-}
-.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
-  background-color: #e44002;
-}
-.ag-courses_item:nth-child(4n) .ag-courses-item_bg {
-  background-color: #952aff;
-}
-.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
-  background-color: #cd3e94;
-}
-.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
-  background-color: #4c49ea;
-}
-
-
-
-@media only screen and (max-width: 979px) {
-  .ag-courses_item {
-    -ms-flex-preferred-size: calc(50% - 30px);
-    flex-basis: calc(50% - 30px);
-  }
-  .ag-courses-item_title {
-    font-size: 24px;
-   
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .ag-format-container {
-    width: 96%;
-  }
-
-}
-@media only screen and (max-width: 639px) {
-  .ag-courses_item {
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
-  }
-  .ag-courses-item_title {
-    min-height: 72px;
-    line-height: 1;
-   
-    font-size: 24px;
-  }
-  .ag-courses-item_link {
-    padding: 22px 40px;
-  }
-  .ag-courses-item_date-box {
-    font-size: 16px;
-  }
-}
-
-    </style>
-  </head>
-
-  <!-- page wrapper -->
-  <body>
-    <div class="boxed_wrapper">
-      <!-- preloader -->
       <div class="loader-wrap">
         <div class="preloader">
           <div class="preloader-close"><i class="far fa-times"></i></div>
@@ -432,6 +153,7 @@
             <div class="animation-preloader">
               <div class="spinner"></div>
               <div class="txt-loading">
+                <span data-text-preloader="A" class="letters-loading"> A </span>
                 <span data-text-preloader="R" class="letters-loading"> R </span>
                 <span data-text-preloader="B" class="letters-loading"> B </span>
                 <span data-text-preloader="M" class="letters-loading"> M </span>
@@ -440,52 +162,13 @@
           </div>
         </div>
       </div>
-      <!-- preloader end -->
 
-      <!-- main header -->
+       <!-- preloader end  -->
+
+      <!-- main header  -->
+      
       <header class="main-header">
         <!-- header-top -->
-        <div class="header-top">
-          <div class="top-inner clearfix">
-            <div class="left-column pull-left">
-              <ul class="info clearfix">
-                <li><i class="far fa-map-marker-alt"></i>Navale Icon, Pune</li>
-                <li><i class="far fa-clock"></i>Mon - Fri 9.00 - 5.00</li>
-                <li>
-                  <i class="far fa-phone"></i
-                  ><a href="tel:+91 7263968850">+91 7263968850</a>
-                </li>
-              </ul>
-            </div>
-            <div class="right-column pull-right">
-              <ul class="social-links clearfix">
-                <li>
-                  <a
-                    href=" https://www.facebook.com/profile.php?id=10009167171653"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href=" https://www.linkedin.com/company/94208437"
-                    ><i class="fab fa-linkedin"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.youtube.com/@aarohiinfofimangement/playlists"
-                    ><i class="fab fa-youtube"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.instagram.com/realestate_banking_management/"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
         <!-- header-lower -->
         <div class="header-lower">
           <div class="outer-box">
@@ -493,7 +176,7 @@
               <div class="logo-box">
                 <figure class="logo">
                   <a href="index.html"
-                    ><img src="assets/images/RBM_White_Logo.png" alt="" width= "156%" height="83px" /></a>
+                    ><img src="assets/images/rbm.png" alt="" class="nav-logo-img" /></a>
                 </figure>
               </div>
               <div class="menu-area clearfix">
@@ -509,10 +192,16 @@
                     id="navbarSupportedContent"
                   >
                     <ul class="navigation clearfix">
+                      <li>
+                      <a href="http://rbm.aitpro.in/">
+                        <button class="floating-button text-light" style="background-color: red;">RealTech
+                        </button></a>            
+                        </li>
                       <li class="current">
                         <a href="index.html"><span>Home</span></a>
                       </li>
-                      <li class="">
+                      
+                      <!-- <li class="">
                         <a href="about.html"><span>About us</span></a>
                       </li>
                       <li class="">
@@ -524,15 +213,60 @@
                           <li><a href="dev.html">For Developers</a></li>
                           <li><a href="invest.html">For Investors</a></li>
                         </ul>
+                      </li> -->
+                      <li class="">
+                        <a href="dev.html"><span>Builders & Developers</span></a>
                       </li>
                       <li class="">
-                        <a href="property-grid.html"><span>Projects</span></a>
+                        <a href="invest.html"><span>Buyers & Investors</span></a>
                       </li>
-                      
+                      <!-- <li class="">
+                        <a href="property-grid.html"><span>Projects</span></a>
+                      </li> -->
+                      <!-- <li class="dropdown">
+                        <a href="services.html"><span>Internet Banking</span></a>
+                        <ul>
+                          <li><a href="">Account Openning</a></li>
+                          <li><a href="https://banking.ssdmultistate.com/login">Net Banking</a></li>
+                        </ul>
+                      </li> -->
+                      <li class="">
+                        <a href="https://ssdmultistate.com/"><span>SSD Multistate</span></a>
+                      </li>
+                      <!-- <li class="">
+                        <a href="https://prop.vu/the_leisure_lagoons"><span>Virtual Projects Tour</span></a>
+                      </li> -->
+                      <!-- <li class="dropdown">
+                        <a href="services.html"><span>Fintech</span></a>
+                        <ul>
+                          <li><a href="">Account Openning</a></li>
+                          <li><a href="https://http://rbm.aitpro.in">Digital Investment Dashboard</a></li>
+                        </ul>
+                      </li> -->
                       <li>
                         <a href="contact.html"><span>Contact</span></a>
                       </li>
+                    
+                      <!-- <li class="  " >
+                      <a href="http://rbm.aitpro.in/">
+                        <button class="btn pl-2 floating-button text-light" style="background-color: #ff4800;" ><span>Fintech</span></button> 
+                      </a>
+                      </li> -->
+                     
+                      </ul>
+                      
                     </ul>
+                    
+                    <!-- <div class="dropdown">
+                      <button class="dropbtn floating-button" style="right: -856px;top:-104px; background-color: #ff4800;">Fintech</button>
+                      <div class="dropdown-content" style="right:-875 !important;">
+                        <a href="#">Account Opening</a>
+                        <a href="#">Net Banking</a>
+                      </div>
+                    </div> -->
+
+                   
+            
                   </div>
                 </nav>
               </div>
@@ -547,10 +281,11 @@
               <div class="logo-box">
                 <figure class="logo">
                   <a href="index.html"
-                    ><img src="assets/images/RBM_White_Logo.png" alt=""width= "156%" height="83px"
+                    ><img src="assets/images/rbm.png" alt="" class="nav-logo-img"
                   /></a>
                 </figure>
               </div>
+             
               <div class="menu-area clearfix">
                 <nav class="main-menu clearfix">
                   <!--Keep This Empty / Menu will come through Javascript-->
@@ -560,9 +295,9 @@
           </div>
         </div>
       </header>
-      <!-- main-header end -->
+      <!-- main-header end-->
 
-      <!-- Mobile Menu  -->
+      <!-- Mobile Menu --> 
       <div class="mobile-menu">
         <div class="menu-backdrop"></div>
         <div class="close-btn"><i class="fas fa-times"></i></div>
@@ -570,7 +305,7 @@
         <nav class="menu-box">
           <div class="nav-logo">
             <a href="index.html"
-              ><img src="assets/images/RBM LOGO PNG-01.jpg" alt="" width= "156%" height="83px" title=""
+              ><img src="assets/images/RBM_White_Logo.png"  alt="" width= "156%" height="83px" title=""
             /></a>
           </div>
           <div class="menu-outer">
@@ -593,24 +328,24 @@
               <li>
                 <a
                   href=" https://www.facebook.com/profile.php?id=100091671716534"
-                  ><i class="fab fa-facebook-f"></i
+                  ><i class="fa fa-facebook-f"></i
                 ></a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/company/94208437"
-                  ><i class="fab fa-linkedin"></i
+                  ><i class="fa fa-linkedin"></i
                 ></a>
               </li>
               <li>
                 <a
                   href="https://www.youtube.com/@aarohiinfofimangement/playlists"
-                  ><i class="fab fa-youtube"></i
+                  ><i class="fa fa-youtube"></i
                 ></a>
               </li>
               <li>
                 <a
                   href="https://www.instagram.com/realestate_banking_management/"
-                  ><i class="fab fa-instagram"></i
+                  ><i class="fa fa-instagram"></i
                 ></a>
               </li>
             </ul>
@@ -621,819 +356,654 @@
       <!-- End Mobile Menu -->
 
       <!-- banner-style-two -->
-      <section class="banner-style-two centred" >
-        
+      <section class="banner-style-two centred" style="position: relative;">
         <img src="assets/images/RBM_Banner-01.jpg" alt="">
+       
       </section>
       <!-- banner-style-two end -->
 
-      <section
-        class="objective-section wow slideInLeft animated"
+   <section
+        class="objective-section wow slideInLeft animated "
         data-wow-delay="00ms"
         data-wow-duration="1500ms"
       >
         <div class="auto-container">
           <div class="sec-title centred">
             <h2>Objective</h2>
-            <p>
-              The objective of this project is to conceptualise the Financial
+            <p style="font-size:20px !important">
+              The objective of this project is to conceptualize the Financial
               Inclusion and inculcate banking to improve affordability and
-              sustainability .<br />
+              sustainability .
               The win over with the capability on Capital , is the concept which
               directly empowers the nation in building Infrastructure and
               empowers individual to beat the Inflation and empowers their hard
-              earned with utmost security and Interest Benefit.
+              earned money with utmost security and Interest Benefit.
             </p>
           </div>
         </div>
-      </section>
+      </section> 
 
 
-      <!-- Issues section -->
-      <section>
-          <div class="inner-container flex d-flex flex-column justify-content-center" style="background-color: rgb(218, 218, 218);">
-            <div class="sec-title centred">
-        
-              <h1>Issues In Industries</h1>
-              <!-- <div class="flex d-flex justify-content-center mt-3 flex-column w-100 align-items-center space-3">
-                
-                <div class="rounded-pill p-3 border m-2" style="">
-                <div class="rounded-pill border p-1 flex d-flex justify-content-around align-items-center shadow" style="width: 300px;"  >
-                  <div class="rounded-circle border ">                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                    <img src="./assets/images/fund.svg" style="width:100px;height: 100px;">
-                  </div>                                                                                                                
-                  <h3 class="pr-3 " style="font-weight:600">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Funding</h3>
-                </div>                                                                                                                                                                                                                        
-              </div>
-
-                <div class="rounded-pill border border p-1 flex d-flex justify-content-around align-items-center " style="width: 300px;">
-                  <h3 class="pr-3 " style="font-weight:600">Financial Analysis</h3>
-                  <div class="rounded-circle border ">
-                    <img src="./assets/images/analytics.png" style="width:80px;height: 80px;">
-                  </div>
-                
-                </div>
-
-                <div class="rounded-pill border p-1 flex d-flex justify-content-around align-items-center" style="width: 300px;"  >
-                  <div class="rounded-circle border ">
-                    <img src="./assets/images/fund.svg" style="width:100px;height: 100px;">
-                  </div>
-                  <h3 class="pr-3 " style="font-weight:600">On Time Funding</h3>
-                </div>
-                
-               
-                </div> -->
-                
-                <div class='container'  >
-                    
-                  <div class="row">
-                   
-                    <div class="col-md-4" >
-                      <div class="image custom-image">
-                    
-                        <div class='card tag1 img2'>
-                          <div class='card__info d-flex align-items-center justify-content-center h-100'>
-                            <p style="color:white;font-size: 45px;
-                            font-weight: 800;text-shadow: #000;" class="double-shadow "> On Time <br><br>Funding</p>
-                           
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+    <!-- Issues section -->
 
 
-                    <div class="col-md-4" >
-                      <div class="image custom-image">
-                    
-                        <div class='card tag1 img3'>
-                          <div class='card__info d-flex align-items-center justify-content-center h-100'>
-                            <p style="color:white;font-size: 45px;
-                            font-weight: 800;text-shadow: #000;" class="double-shadow "> Financial <br><br>Analysis</p>
-                           
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-4" >
-                      <div class="image custom-image">
-                    
-                        <div class='card tag1 img4'>
-                          <div class='card__info d-flex align-items-center justify-content-center h-100'>
-                            <p style="color:white;font-size: 45px;
-                            font-weight: 800;text-shadow: #000;" class="double-shadow "> Sales <br><br>Revenue</p>
-                           
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                   
-                   
-                  </div>
-                  <div class="row d-flex justify-content-center">
-                    
-                    <div class="col-md-4" >
-                      <div class="image custom-image">
-                    
-                        <div class='card tag1 img5' >
-                          <div class='card__info d-flex align-items-center justify-content-center h-100'>
-                            <p style="color:white;font-size: 45px;
-                            font-weight: 800;text-shadow: #000;" class="double-shadow "> Construction<br><br>Management</p>
-                           
-                          </div>
-                        </div>
-                     
-                      </div>
-                    </div>
-                   
-
-                    <div class="col-md-4" >
-                      <div class="image custom-image">
-                    
-                        <div class='card tag1 img6'>
-                          <div class='card__info d-flex align-items-center justify-content-center h-100'>
-                            <p style="color:white;font-size: 45px;
-                font-weight: 800;text-shadow: #000;  background-color: rgba(0, 0, 0, 0.3);" class="double-shadow ">  Compliances</p>
-                           
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
-                 
-                 
-              </div>
-
-
-
-              </div>
-          
-          </div>
-         
-     
-      </section>
-
-
-      <!-- Solution -->
-      <section style="min-width: 1500px;">
-          <div class="inner-container flex d-flex flex-column justify-content-center" >
-            <div class="sec-title centred">
-        
-              <h1>Solution</h1>            
-                <div class='container w-100' style="height: fit-content;padding-top: 0px;"  >
-                  <div class="row d-flex w-100 justify-content-center">
-                   
-                    <div class="col-md-5 m-1 d-flex justify-content-center align-items-center" style="height:250px; width:300px" >                   
-                        <div class='hexagon p-3' style="background-color: rgb(97, 46, 46);">
-                          <div class="hexagon1 p-3" style="background-color: rgb(255, 255, 255);">
-                            <div class="hexagon2 p-3" style="background-color: rgb(97, 46, 46);"> 
-                          <div class='card__info d-flex align-items-center justify-content-center h-100'>
-                            <p style="color:rgb(255, 255, 255);;font-size: 30px;
-                            font-weight: 800;text-shadow: #000;"> Risk <br>Mitigation</p>                       
-                          </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                      <div style="position: absolute;border:2px solid black;top:175px; width:155px"> </div>
-
-
-                      <div style="position: absolute;border:2px solid black;top:251px; height:160px;left: 516px;"> </div>
-
-                      
-
-                       <div class="col-md-5 m-1 d-flex justify-content-center align-items-center" style="height:250px; width: 300px;" >                   
-                        <div class='hexagon p-3' style="background-color: rgb(5, 46, 80);">
-                          <div class="hexagon1 p-4" style="background-color: white;">
-                            <div class="hexagon2 p-3" style="background-color: rgb(5, 46, 80);"> 
-                            <div class='card__info d-flex align-items-center justify-content-center h-100'>
-                            <p style="color:rgb(255, 255, 255);font-size: 30px;
-                            font-weight: 800;text-shadow: #000;" > Multiple <br> Sales <br>Products</p>                       
-                          </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div style="position: absolute;border:2px solid black;top:251px; height:239px;left: 977px;"> </div>
-
-                       <div class="col-md-5 m-1 d-flex justify-content-center align-items-center" style="height:250px;width: 300px;" >                   
-                        <div class='hexagon p-3' style="background-color: rgb(89, 5, 97);">
-                          <div class="hexagon1 p-4" style="background-color: white;">
-                            <div class="hexagon2 p-3" style="background-color: rgb(89, 5, 97);"> 
-                            <div class='card__info d-flex align-items-center justify-content-center h-100'>
-                            <p style="color:rgb(255, 255, 255);font-size: 30px;
-                            font-weight: 800;text-shadow: #000;"> Project <br>Management</p>                       
-                          </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div style="position: absolute;border:2px solid black;top:433px; width:155px"></div>
-
-                       <div class="col-md-5 m-1 d-flex justify-content-center align-items-center" style="height:250px;width: 300px;" >                   
-                        <div class='hexagon p-3' style="background-color: rgb(25, 71, 4);">
-                          <div class="hexagon1 p-4" style="background-color: white;">
-                            <div class="hexagon2 p-3" style="background-color: rgb(25, 71, 4);"> 
-                            <div class='card__info d-flex align-items-center justify-content-center h-100'>
-                            <p style="color:rgb(255, 255, 255);font-size: 30px;
-                            font-weight: 800;text-shadow: #000;" > Authentic <br>Investment<br> Options</p>                       
-                          </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                   
-                    
-                  </div>
-                 
-                 
-              </div>
-
-
-
-              </div>
-          
-          </div>
-         
-     
-      </section>
-
-
-
-      <section style="min-width: 1500px;" >
-        <div class="inner-container flex d-flex flex-column justify-content-center p-2" style="background-color: rgb(218, 218, 218);">
-          <div class="sec-title centred">
-      <div class="d-flex justify-content-center">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-             <div class="rounded-circle p-3 d-flex justify-content-center align-items-center" style="border:5px solid rgb(29, 43, 68);height: 180px;width: 180px;">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-              <img src="./assets/images/rbm.png">
-             </div>      
-            </div>
-
-            <div style="position: absolute;border:3px solid rgb(29, 43, 68);top:179px; height:81px;left: 757px;"> </div>
-
-            <div style="position: absolute;border:3px solid rgb(29, 43, 68);top:260px;left: 342px; width:901px"></div>
-
-
-            <div style="position: absolute;border:3px solid rgb(29, 43, 68);top:260px; height:50px;left: 340px;"> </div>
-
-
-            <div style="position: absolute;border:3px solid rgb(29, 43, 68);top:260px; height:59px;left: 585px;"> </div>
-
-
-            <div style="position: absolute;border:3px solid rgb(29, 43, 68);top:260px; height:50px;left: 812px;"> </div>
-
-            <div style="position: absolute;border:3px solid rgb(29, 43, 68);top:260px; height:64px;left: 1048px;"> </div>
-
-            <div style="position: absolute;border:3px solid rgb(29, 43, 68);top:260px; height:59px;left: 1241px;"> </div>
-
-
-            <div class="d-flex justify-content-center" style="margin-top: 100px;">
-              <div class="d-flex justify-content-center align-items-center flex-column m-4">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-                  <div class="image custom-image mb-1" style="height: fit-content;">               
-                    <div class='card tag1 img7 rounded-circle shadow' style="height: 120px; width:120px;border:2px solid white">                    
-                    </div>
-                  </div>
-                
-
-              <h5 style="font-size: 20px; font-weight: 800">Need to Bring <br>builders & developers<br> on one place</h5> 
-            </div>    
-           
-
-             <div class="d-flex justify-content-center align-items-center flex-column m-4">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-              <div class="image custom-image mb-1" style="height: fit-content;">               
-                <div class='card tag1 img8 rounded-circle shadow' style="height: 120px; width:120px;border:2px solid white">                    
-                </div>
-              </div> 
-              <h5 style="font-size: 20px; font-weight: 800">Add Same <br>banking to all</h5> 
-            </div>    
-           
-
-             <div class="d-flex justify-content-center align-items-center flex-column m-4">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-              <div class="image custom-image mb-1" style="height: fit-content;">               
-                <div class='card tag1 img9 rounded-circle shadow' style="height: 120px; width:120px;border:2px solid white">                    
-                </div>
-              </div>
-              <h5 style="font-size: 20px; font-weight: 800">Identify more <br>revenue generation<br> model</h5> 
-            </div>    
-            
-
-             <div class="d-flex justify-content-center align-items-center flex-column m-4 ">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-              <div class="image custom-image mb-1" style="height: fit-content;">               
-                <div class='card tag1 img10 rounded-circle shadow' style="height: 120px; width:120px;border:2px solid white">                    
-                </div>
-              </div>
-              <h5 style="font-size: 20px; font-weight: 800">Additional <br>Sales Products</h5> 
-            </div>  
-            
-            <div class="d-flex justify-content-center align-items-center flex-column m-4 ">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-              <div class="image custom-image mb-1" style="height: fit-content;">               
-                <div class='card tag1 img11 rounded-circle shadow' style="height: 120px; width:120px;border:2px solid white">                    
-                </div>
-              </div>
-              <h5 style="font-size: 20px; font-weight: 800">Emergency <br>credit line</h5> 
-            </div> 
-             </div>
-
-
-
-            </div>
-        
-        </div>
+<section style="background-color: #c9d8ff;padding-top: 100px;padding-bottom: 100px;">
+  <div class="auto-container">
+    <div class="row align-items-center clearfix d-flex justify-content-between">
        
-   
+        <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+            <div class="content_block_3">
+                <div class="content-box">
+                    <div class="sec-title">
+                       
+                        <h2 class="text-dark" style="color: #0b2032 !important;">Issues In Industries</h2>
+                    </div>
+                    
+                    <ul class=" clearfix">
+                        <li ><div class="flex d-flex flex-row align-items-center m-1"><div class="rounded-circle  m-2" style="height: 20px;width: 20px;background-color: #0b2032;"></div> <h4 style="color: #0b2032 !important;">On Time Funding</h4></div></li>
+                        <li ><div class="flex d-flex flex-row align-items-center m-1"><div class="rounded-circle  m-2" style="height: 20px;width: 20px;background-color: #0b2032"></div> <h4 style="color: #0b2032;">Financial Analysis</h4></div></li>
+                        <li ><div class="flex d-flex flex-row align-items-center m-1"><div class="rounded-circle  m-2" style="height: 20px;width: 20px;background-color: #0b2032"></div> <h4 style="color: #0b2032;">Sales Revenue</h4></div></li>
+                        <li ><div class="flex d-flex flex-row align-items-center m-1"><div class="rounded-circle m-2" style="height: 20px;width: 20px;background-color: #0b2032"></div> <h4 style="color: #0b2032;">Construction Management</h4></div></li>
+                        <li ><div class="flex d-flex flex-row align-items-center m-1"><div class="rounded-circle m-2" style="height: 20px;width: 20px;background-color: #0b2032"></div> <h4 style="color: #0b2032;">Compliances</h4></div></li>
+                       
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-12 col-sm-12 content-column">
+          <div class="content_block_3">
+              <div class="content-box">
+                  <div class="sec-title">
+                     
+                      <h2 style="color: #0b2032;">Solutions</h2>
+                  </div>
+                  
+                  <ul class=" clearfix">
+                      <li ><div class="flex d-flex flex-row align-items-center m-1"><div class="rounded-circle  m-2" style="height: 25px;width: 25px;background-color: #0b2032;"></div> <h4 style="color: #0b2032;">Risk Mitigation</h4></div></li>
+                      <li ><div class="flex d-flex flex-row align-items-center m-1"><div class="rounded-circle  m-2" style="height: 25px;width: 25px;background-color: #0b2032"></div> <h4 style="color: #0b2032;">Paying Capacity</h4></div></li>
+                      <li ><div class="flex d-flex flex-row align-items-center m-1"><div class="rounded-circle  m-2" style="height: 25px;width: 25px;background-color: #0b2032"></div> <h4 style="color: #0b2032;">Investment Management</h4></div></li>
+                      <li ><div class="flex d-flex flex-row align-items-center m-1"><div class="rounded-circle m-2" style="height: 25px;width: 25px;background-color: #0b2032"></div> <h4 style="color: #0b2032;">Flexiblity</h4></div></li>
+                     
+                  </ul>
+                  
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+</section>
+
+<!-- 
+<section class="about-section "  style="padding: 80px 0px;">
+  <div class="auto-container">
+      <div class="row align-items-center clearfix">
+          <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+              <div class="image_block_2">
+                  <div class="image-box flex d-flex">
+                    <div class="col-md-5 d-flex align-items-end flex-column">
+                      <figure class="image mb-3 d-flex justify-content-end"><img src="assets/images/sol2.jpg" alt="" style="height: 225px;width:100%"></figure>
+                      <figure class="image align-self-end"><img src="assets/images/sol1.jpg" alt="" class="w-100"></figure>
+                    </div>
+                      <figure class="image col-md-6"><img src="assets/images/sol4.jpg" alt="" style="width: 285px;height:100%"></figure>
+                      
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+              <div class="content_block_3">
+                  <div class="content-box">
+                      <div class="sec-title">
+                         
+                          <h2 style="color: #0b2032;">Solutions</h2>
+                      </div>
+                      
+                      <ul class=" clearfix">
+                          <li ><div class="flex d-flex flex-row align-items-center m-1"><div class="rounded-circle  m-2" style="height: 25px;width: 25px;background-color: #ff4800;"></div> <h3 style="color: #0b2032;">Risk Mitigation</h3></div></li>
+                          <li ><div class="flex d-flex flex-row align-items-center m-1"><div class="rounded-circle  m-2" style="height: 25px;width: 25px;background-color: #ff4800"></div> <h3 style="color: #0b2032;">Authentic Investment Options</h3></div></li>
+                          <li ><div class="flex d-flex flex-row align-items-center m-1"><div class="rounded-circle  m-2" style="height: 25px;width: 25px;background-color: #ff4800"></div> <h3 style="color: #0b2032;">Multiple Sales Products</h3></div></li>
+                          <li ><div class="flex d-flex flex-row align-items-center m-1"><div class="rounded-circle m-2" style="height: 25px;width: 25px;background-color: #ff4800"></div> <h3 style="color: #0b2032;">Project Management</h3></div></li>
+                         
+                      </ul>
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section> -->
+
+<section class="d-flex justify-content-center">
+      <div class="three-item-carousel owl-carousel owl-theme owl-nav-none dots-style-one owl-loaded owl-drag " >             
+          <div class="owl-stage-outer p-4 " >
+              <div class="owl-stage" style="transform: translate3d(-2000px, 0px, 0px); transition: 0.8s; width: 7600px;">
+                  <div class="owl-item cloned" style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+                    <div class="agents-block-two">  
+                    <div class="inner-box" style="height: 319px !important;">
+                      <div class="icon-box"><img src="./assets/images/team.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                      <h4>Need to Bring builders & developers on one place</h4>
+                     
+                  </div>
+                  </div>
+              </div></div>
+              <div class="owl-item cloned" style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+                <div class="agents-block-two">  
+                <div class="inner-box">
+                      <div class="icon-box"><img src="./assets/images/bank.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                      <h4>Add Same banking to all</h4>
+                     
+                  </div></div>
+              </div></div>
+              <div class="owl-item cloned" style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+                <div class="agents-block-two">
+                <div class="inner-box">
+                      <div class="icon-box"><img src="./assets/images/model.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                      <h4>Identify more revenue generation model</h4>
+                     
+                  </div></div>
+              </div></div>
+              <div class="owl-item cloned" style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+                <div class="agents-block-two">  
+                <div class="inner-box">
+                      <div class="icon-box"><img src="./assets/images/sales.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                      <h4>Additional Sales Products</h4>
+                     
+                  </div></div>
+              </div></div>
+              <div class="owl-item cloned" style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+                <div class="agents-block-two">
+                <div class="inner-box">
+                      <div class="icon-box"><img src="./assets/images/credit.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                      <h4>Emergency credit line</h4>
+                     
+                  </div></div>
+              </div></div>
+  
+              <div class="owl-item" style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+                  <div class="inner-box" style="height: 319px !important;">
+                      <div class="icon-box"><img src="./assets/images/team.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                      <h4>Need to Bring builders & developers on one place</h4>
+                     
+                  </div>
+              </div></div>
+
+              <div class="owl-item " style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+                <div class="inner-box">
+                    <div class="icon-box"><img src="./assets/images/bank.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                    <h4>Add Same banking to all</h4>
+                   
+                </div>
+            </div></div>
+            <div class="owl-item " style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+                <div class="inner-box">
+                    <div class="icon-box"><img src="./assets/images/model.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                    <h4>Identify more revenue generation model</h4>
+                   
+                </div>
+            </div></div>
+            <div class="owl-item " style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+                <div class="inner-box">
+                    <div class="icon-box"><img src="./assets/images/sales.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                    <h4>Additional Sales Products</h4>
+                   
+                </div>
+            </div></div>
+            <div class="owl-item " style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+                <div class="inner-box">
+                    <div class="icon-box"><img src="./assets/images/credit.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                    <h4>Emergency credit line</h4>
+                    
+                </div>
+            </div></div>
+
+            <div class="owl-item active" style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+                <div class="inner-box" style="height: 319px !important;">
+                    <div class="icon-box"><img src="./assets/images/team.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                    <h4>Need to Bring builders & developers on one place</h4>
+                   
+                </div>
+            </div></div>
+            <div class="owl-item active" style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+              <div class="inner-box">
+                  <div class="icon-box"><img src="./assets/images/bank.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                  <h4>Add Same banking to all</h4>
+                  
+              </div>
+          </div></div>
+          <div class="owl-item active" style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+              <div class="inner-box">
+                  <div class="icon-box"><img src="./assets/images/model.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                  <h4>Identify more revenue generation model</h4>
+                 
+              </div>
+          </div></div>
+          <div class="owl-item active" style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+              <div class="inner-box">
+                  <div class="icon-box"><img src="./assets/images/sales.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                  <h4>Additional Sales Products</h4>
+                 
+              </div>
+          </div></div>
+          <div class="owl-item active" style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+              <div class="inner-box">
+                  <div class="icon-box"><img src="./assets/images/credit.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                  <h4>Emergency credit line</h4>
+                 
+              </div>
+          </div></div>
+
+          <div class="owl-item cloned" style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+              <div class="inner-box" style="height: 319px !important;">
+                  <div class="icon-box"><img src="./assets/images/team.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                  <h4>Need to Bring builders & developers on one place</h4>
+                 
+              </div>
+          </div></div>
+
+          <div class="owl-item cloned" style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+            <div class="inner-box">
+                <div class="icon-box"><img src="./assets/images/bank.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                <h4>Add Same banking to all</h4>
+               
+            </div>
+        </div></div>
+        <div class="owl-item cloned" style="width: 370px; margin-right: 30px;height: 324px;"><div class="feature-block-two">
+            <div class="inner-box">
+                <div class="icon-box"><img src="./assets/images/model.jpg" style="width: 100px;height: 100px;" class="rounded-circle"></div>
+                <h4>Identify more revenue generation model</h4>
+               
+            </div>
+        </div></div>
+        
+        
+
+             
+          </div></div>
+        
+              <div class="owl-nav justify-content-center ">
+                <button type="button" role="presentation" class="owl-prev"><span class="far fa-angle-left"></span></button>
+                <button type="button" role="presentation" class="owl-next"><span class="far fa-angle-right"></span></button>
+              </div>
+              </div>
+ 
+
+
+              
+                
+            </section>
+     
+    <!-- Options for funding RBC -->
+
+ 
+  <section class="chooseus-section alternate-2" style="background-color:#c9d8ff;">
+    <div class="auto-container">
+        <div class="upper-box clearfix">
+            <div class="sec-title">
+               
+                <h2 class="text-center">Options for Funding ARBM</h2>
+            </div>
+            
+        </div>
+        <div class="lower-box">
+            <div class="row clearfix">
+                <div class="col-lg-4 col-md-6 col-sm-12 chooseus-block">
+                    <div class="chooseus-block-one d-flex justify-content-center">
+                        <div class="inner-box">
+                            <div class="icon-box"><img src="./assets/images/sales.png" style="height: 50px;width: 50px;"></div>
+                            <h4>Direct Sales</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 chooseus-block">
+                    <div class="chooseus-block-one d-flex justify-content-center">
+                        <div class="inner-box">
+                            <div class="icon-box"><img src="./assets/images/builder.png" style="height: 50px;width: 50px;"></div>
+                            <h4>CD Ratio of Builders</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 chooseus-block">
+                    <div class="chooseus-block-one d-flex justify-content-center">
+                        <div class="inner-box">
+                            <div class="icon-box"><img src="./assets/images/bank fund.png" style="height: 50px;width: 50px;"></div>
+                            <h4>Bank Own Fund</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix mt-3">
+              <div class="col-lg-4 col-md-6 col-sm-12 chooseus-block">
+                  <div class="chooseus-block-one d-flex justify-content-center">
+                      <div class="inner-box">
+                          <div class="icon-box"><img src="./assets/images/deposit1.png" style="height: 50px;width: 50px;"></div>
+                          <h4>Secured Fixed <br>Deposit & <br>Investment</h4>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12 chooseus-block">
+                  <div class="chooseus-block-one d-flex justify-content-center">
+                      <div class="inner-box">
+                          <div class="icon-box"><img src="./assets/images/investment.png" style="height: 50px;width: 50px;"></div>
+                          <h4>Other Bank Investment</h4>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12 chooseus-block">
+                  <div class="chooseus-block-one d-flex justify-content-center">
+                      <div class="inner-box">
+                          <div class="icon-box"><img src="./assets/images/Buy Back.png" style="height: 50px;width: 50px;"></div>
+                          <h4>Retail Buy<br> Back Investment</h4>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+</section>
+    <!-- Emergency Credit Line -->
+    <section>
+      <div class="inner-container flex d-flex flex-column justify-content-center"
+       >
+        <div class="sec-title centred">
+
+          <h1>Emergency Credit Line</h1>
+          <div class='container' style="width:100vw">
+            <div class="row d-flex  justify-content-center">
+
+
+              <div class="flex d-flex justify-content-center mt-4 flex-wrap align-items-center " style="width: 100vw;">
+
+                <div class="col-md-4 col-12 d-flex justify-content-center flex-column align-items-center">
+                  <div class="rounded-pill p-2 border border-dark m-3" style="width: 300px;">
+                    <div class="rounded-pill border p-1 flex d-flex justify-content-around align-items-center shadow">
+                      <div class="rounded-circle  d-flex align-items-center justify-content-center"
+                        style="height: 100px;width:100px;"><img src="./assets/images/add-account.png"
+                          style="height: 80px;width: 80px;"></div>
+                      <h5 class="pr-3 d-flex align-items-center justify-content-center" style="font-weight:600">Open an
+                        account with us</h5>
+                    </div>
+                  </div>
+
+
+                  <div class="rounded-pill p-2 border border-dark m-3" style="width: 300px;">
+                    <div class="rounded-pill border p-1 flex d-flex justify-content-around align-items-center shadow">
+                      <h5 class="pr-3 d-flex align-items-center justify-content-center" style="font-weight:600">Deposit
+                        Minimum <br> Investment in his Account</h5>
+                      <div class="rounded-circle  d-flex align-items-center justify-content-center"
+                        style="height: 100px;width:100px;"><img src="./assets/images/deposit.png"
+                          style="height: 70px;width: 70px;"></div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="col-md-4 col-12 d-flex justify-content-center flex-column align-items-center">
+                  <div class="rounded-pill p-2 border border-dark m-3" style="width: 300px;">
+                    <div class="rounded-pill border p-1 flex d-flex justify-content-around align-items-center shadow">
+                      <div class="rounded-circle  d-flex align-items-center justify-content-center"
+                        style="height: 100px;width:100px"><img src="./assets/images/share.png"
+                          style="height: 70px;width: 70px;"></div>
+                      <h5 class="pr-3 d-flex align-items-center justify-content-center" style="font-weight:600">Share
+                        the Project Plan</h5>
+                    </div>
+                  </div>
+
+
+
+
+
+                  <div class="rounded-pill p-2 border border-dark m-3" style="width: 300px;">
+                    <div class="rounded-pill border p-1 flex d-flex justify-content-around align-items-center shadow">
+                      <div class="rounded-circle  d-flex align-items-center justify-content-center"
+                        style="height: 100px;width:100px;"><img src="./assets/images/funding.png"
+                          style="height: 70px;width: 70px;"></div>
+                      <h5 class="pr-3 d-flex align-items-center justify-content-center" style="font-weight:600">Funding
+                        for Construction</h5>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-md-4 col-12 d-flex justify-content-center flex-column align-items-center">
+
+                  <div class="rounded-pill p-2 border border-dark m-3" style="width: 300px;">
+                    <div class="rounded-pill border p-1 flex d-flex justify-content-around align-items-center shadow">
+                      <h5 class="pr-3 d-flex align-items-center justify-content-center" style="font-weight:600">Without
+                        Interest Credit Line</h5>
+                      <div class="rounded-circle  d-flex align-items-center justify-content-center"
+                        style="height: 100px;width:100px;"><img src="./assets/images/interest.png"
+                          style="height: 70px;width: 70px;"></div>
+                    </div>
+                  </div>
+
+
+                  <div class="rounded-pill p-2 border border-dark m-3" style="width: 300px;">
+                    <div class="rounded-pill border p-1 flex d-flex justify-content-around align-items-center shadow">
+                      <div class="rounded-circle  d-flex align-items-center justify-content-center"
+                        style="height: 100px;width:100px;"><img src="./assets/images/bill.png"
+                          style="height: 70px;width: 70px;"></div>
+                      <h5 class="pr-3 d-flex align-items-center justify-content-center" style="font-weight:600">Submit
+                        the bills<br> and get recharged credit line</h5>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+
     </section>
 
-<!-- Options for funding RBC -->
-    <section>
-      <div class="inner-container flex d-flex flex-column justify-content-center" style="min-width: 1070px;">
+
+
+    <!-- Multiple Sales Products -->
+    <section style="background-color: #c9d8ff;">
+      <div class="inner-container flex d-flex flex-column justify-content-center">
         <div class="sec-title centred">
-    
-          <h1>Options for Funding RBC</h1>            
-            <div class='container w-100' style="height: fit-content;padding-top: 10px;"  >
-              <div class="row d-flex w-100 justify-content-center">
-               
 
-                <div class="card-option">
-                  <div class="card-option-content">
-                    <p class="card-title">Direct<br><br> Sales
-                    </p>
+          <h1 class="text-dark">Multiple Sales Products</h1>
+         
+          <section class="feature-style-three service-page centred">
+            <div class="auto-container">
+                <div class="row clearfix d-flex justify-content-center">
+                    <div class="col-lg-3 col-md-6 col-sm-12 feature-block d-flex justify-content-center">
+                        <div class="feature-block-two wow fadeInUp animated animated d-flex justify-content-center" data-wow-delay="00ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInUp;">
+                            <div class="inner-box" style="min-width: 270px;">
+                                <div class="icon-box"><img src="./assets/images/direct-sales.png" style="height: 60px;width: 60px;" ></div>
+                                <h4> Direct Sales</h4>
+                                <p> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 feature-block d-flex justify-content-center">
+                        <div class="feature-block-two wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 300ms; animation-name: fadeInUp;">
+                            <div class="inner-box" style="min-width: 270px;">
+                                <div class="icon-box"><img src="./assets/images/Buy Back.png" style="height: 60px;width: 60px;" ></div>
+                                <h4>Buy Back</h4>
+                                <p> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 feature-block d-flex justify-content-center">
+                        <div class="feature-block-two wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 600ms; animation-name: fadeInUp;">
+                            <div class="inner-box" style="padding-bottom: 25px;min-width: 270px;">
+                                <div class="icon-box"><img src="./assets/images/secured.png" style="height: 60px;width: 60px;" ></div>
+                                <h4> Secured Fixed Investment</h4>
+                                <p> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 feature-block d-flex justify-content-center">
+                        <div class="feature-block-two wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInUp;">
+                            <div class="inner-box" style="padding-bottom: 25px;padding-left: 25px;padding-right: 25px;min-width: 270px;" >
+                              <div class="icon-box"><img src="./assets/images/invest.png" style="height: 60px;width: 60px;" ></div>
+                              <h4>Flexible Investment & Withdrawal</h4>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 feature-block d-flex justify-content-center">
+                        <div class="feature-block-two wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 300ms; animation-name: fadeInUp;">
+                            <div class="inner-box" style="padding-bottom: 25px;min-width: 270px;">
+                              <div class="icon-box"><img src="./assets/images/return.png" style="height: 60px;width: 60px;" ></div>
+                              <h4>Flexible Return on Investment</h4>
+                                <p> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 feature-block d-flex justify-content-center">
+                        <div class="feature-block-two wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 600ms; animation-name: fadeInUp;">
+                            <div class="inner-box" style="padding-bottom: 25px;padding-left: 25px;padding-right: 25px;min-width: 270px;">
+                              <div class="icon-box"><img src="./assets/images/secure.png" style="height: 60px;width: 60px;" ></div>
+                              <h4>Risk Free & Secure Investment</h4>
+                                <p> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 feature-block d-flex justify-content-center">
+                      <div class="feature-block-two wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 600ms; animation-name: fadeInUp;">
+                          <div class="inner-box" style="padding-bottom: 25px;min-width: 270px;">
+                            <div class="icon-box"><img src="./assets/images/no gap.png" style="height: 60px;width: 60px;" ></div>
+                            <h4> No Gap for Investment</h4>
+                              <p> </p>
+                          </div>
+                      </div>
                   </div>
                 </div>
-
-                <div class="card-option">
-                  <div class="card-option-content">
-                    <p class="card-title">CD Ration<br><br> of<br><br> Builders
-                    </p>
-                  </div>
-                </div>
-               
-                <div class="card-option">
-                  <div class="card-option-content">
-                    <p class="card-title">Bank Own<br><br> Fund
-                    </p>
-                  </div>
-                </div>
-
-                <div class="card-option">
-                  <div class="card-option-content">
-                    <p class="card-title">Secured<br> Fixed Deposit<br> & Investment
-                    </p>
-                  </div>
-                </div>
-
-
-                <div class="card-option">
-                  <div class="card-option-content">
-                    <p class="card-title">Other<br> Bank<br>Investment
-                    </p>
-                  </div>
-                </div>
-               
-                <div class="card-option">
-                  <div class="card-option-content">
-                    <p class="card-title">Retail<br> Buy Back<br>Investment
-                    </p>
-                  </div>
-                </div>
-                
-              </div>            
-          </div>
-       </div> 
+            </div>
+        </section>
+        </div>
       </div>
-  </section>
+    </section>
 
-<!-- Emergency Credit Line -->
-  <section>
-    <div class="inner-container flex d-flex flex-column justify-content-center" style="min-width: 1070px;background-color: rgb(218, 218, 218);">
-      <div class="sec-title centred">
+
+    <!-- category-section -->
+    <section class="category-section centred">
+      <div class="auto-container">
+        <div class="inner-container wow slideInLeft animated" data-wow-delay="00ms" data-wow-duration="2500ms">
+          <div class="sec-title centred">
+            <h2>Project Cost Managements</h2>
+            <p>
+              Differences between Cost Management of traditional industry and
+              Real Estate Banking Management :<br />Project cost management is
+              the major and important task of P & L Management <br />
+              In traditional real estate Industry , Project cost is
+              designed on 6 following components.
+            </p>
+          </div>
+          <ul class="category-list clearfix">
+            <li>
+              <div class="category-block-one">
+                <div class="inner-box">
+                  <div class="icon-box"><i class="icon-1"></i></div>
+                  <h5><a href="property-details.html">Land cost</a></h5>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="category-block-one">
+                <div class="inner-box">
+                  <div class="icon-box"><i class="icon-2"></i></div>
+                  <h5><a href="property-details.html">Profit</a></h5>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="category-block-one">
+                <div class="inner-box">
+                  <div class="icon-box"><i class="icon-3"></i></div>
+                  <h5>
+                    <a href="property-details.html">Construction cost</a>
+                  </h5>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="category-block-one">
+                <div class="inner-box">
+                  <div class="icon-box"><i class="icon-4"></i></div>
+                  <h5><a href="property-details.html">Marketing cost</a></h5>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="category-block-one">
+                <div class="inner-box">
+                  <div class="icon-box"><i class="icon-5"></i></div>
+                  <h5>
+                    <a href="property-details.html">Funds and finance cost</a>
+                  </h5>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="category-block-one">
+                <div class="inner-box">
+                  <div class="icon-box"><i class="icon-5"></i></div>
+                  <h5>
+                    <a href="property-details.html">Authorities and compliances cost</a>
+                  </h5>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="btn-box">
+            <a href="dev.html" class="theme-btn btn-one">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- category-section end -->
+
   
-        <h1>Emergency Credit Line</h1>            
-          <div class='container w-100' style="height: fit-content;padding-top: 0px;"  >
-            <div class="row d-flex w-100 justify-content-center">
-             
-
-              <div class="flex d-flex justify-content-center mt-4 flex-md-row flex-column  w-100 align-items-center space-3 ">
-                
-                <div class="col-md-6 col-12 d-flex justify-content-center flex-column align-items-center">
-                <div class="rounded-pill p-2 border border-dark m-2" style="width: 400px;" >
-                <div class="rounded-pill border p-1 flex d-flex justify-content-around align-items-center shadow"  >
-                  <div class="rounded-circle border d-flex align-items-center justify-content-center" style="height: 100px;width:100px;background-color: orange;"><h4 class="text-light">OPEN</h4></div>
-                      <h5 class="pr-3 d-flex align-items-center justify-content-center" style="font-weight:600">Open an account with us</h5>
-                </div>                                                                                                                                                                                                                        
-              </div>
-
-
-              <div class="rounded-pill p-2 border border-dark m-2" style="width: 400px;" >
-                <div class="rounded-pill border p-1 flex d-flex justify-content-around align-items-center shadow"  >
-                  <h5 class="pr-3 d-flex align-items-center justify-content-center" style="font-weight:600">Deposit Minimum <br> Investment in his Account</h5>
-                  <div class="rounded-circle border d-flex align-items-center justify-content-center" style="height: 100px;width:100px;background-color: rgb(39, 39, 128);"><h5 class="text-light">DEPOSIT</h5></div>
-                   </div>                                                                                                                                                                                                                        
-              </div>
-               
-
-              <div class="rounded-pill p-2 border border-dark" style="width: 400px;" >
-                <div class="rounded-pill border p-1 flex d-flex justify-content-around align-items-center shadow"  >
-                  <div class="rounded-circle border d-flex align-items-center justify-content-center" style="height: 100px;width:100px;background-color: rgb(177, 68, 86);"><h5 class="text-light">SHARE</h5></div>
-                      <h5 class="pr-3 d-flex align-items-center justify-content-center" style="font-weight:600">Share the Project Plan</h5>
-                </div>                                                                                                                                                                                                                        
-              </div>
-                
-              </div>
-               
-              
-              <div class="col-md-6 col-12 d-flex justify-content-center flex-column align-items-center">
-                <div class="rounded-pill p-2 border border-dark m-2" style="width: 400px;" >
-                <div class="rounded-pill border p-1 flex d-flex justify-content-around align-items-center shadow"  >
-                  <div class="rounded-circle border d-flex align-items-center justify-content-center" style="height: 100px;width:100px;background-color: orange;"><h5 class="text-light">GET</h5></div>
-                      <h5 class="pr-3 d-flex align-items-center justify-content-center" style="font-weight:600">Funding for Construction</h5>
-                </div>                                                                                                                                                                                                                        
-              </div>
-
-
-              <div class="rounded-pill p-2 border border-dark m-2" style="width: 400px;" >
-                <div class="rounded-pill border p-1 flex d-flex justify-content-around align-items-center shadow"  >
-                  <h5 class="pr-3 d-flex align-items-center justify-content-center" style="font-weight:600">Without Interest Credit Line</h5>
-                  <div class="rounded-circle border d-flex align-items-center justify-content-center" style="height: 100px;width:100px;background-color: rgb(39, 39, 128);"><h5 class="text-light">INTEREST</h5></div>
-                   </div>                                                                                                                                                                                                                        
-              </div>
-               
-
-              <div class="rounded-pill p-2 border border-dark" style="width: 400px;" >
-                <div class="rounded-pill border p-1 flex d-flex justify-content-around align-items-center shadow"  >
-                  <div class="rounded-circle border d-flex align-items-center justify-content-center" style="height: 100px;width:100px;background-color: rgb(177, 68, 86);"><h5 class="text-light">SUBMIT</h5></div>
-                      <h5 class="pr-3 d-flex align-items-center justify-content-center" style="font-weight:600">Submit the bills<br> and get recharged credit line</h5>
-                </div>                                                                                                                                                                                                                        
-              </div>
-                
-              </div>
-                </div>
-            
-              
-            </div>
-           
-           
+    <!-- feature-section -->
+    <section class="feature-section sec-pad" style="background-color: #c9d8ff;">
+      <div class="auto-container">
+        <div class="sec-title centred">
+          <h5>Features</h5>
+          <h2>Our Property</h2>
         </div>
-
-
-
-        </div>
-    
-    </div>
-   
-
-</section>
-
-
-
-<!-- Multiple Sales Products -->
-<section>
-  <div class="inner-container flex d-flex flex-column justify-content-center" style="min-width: 1070px;">
-    <div class="sec-title centred">
-
-      <h1>Multiple Sales Products</h1>            
-        <!-- <div class='container w-100' style="height: fit-content;padding-top: 0px;"  >
-          <div class="row d-flex w-100 justify-content-center">
-           <div class="flex d-flex justify-content-center mt-4 flex-row flex-wrap w-100 align-items-center space-3">
-             
-            <div class="card-products m-2">Direct Sales</div>
-            <div class="card-products m-2">Flexible Return on Investment</div>
-            <div class="card-products m-2">Secured Fixed Investment</div>
-            <div class="card-products m-2">Flexible Investment & Withdrawal</div>
-          
-            <div class="card-products m-2">Buy Back</div>
-            <div class="card-products m-2">Risk Free & Secure Investment</div>
-            <div class="card-products m-2">No Gap for Investment</div>
-            
-              </div>            
-          </div>         
-      </div> -->
-      <div class="ag-format-container">
-        <div class="ag-courses_box">
-          <div class="ag-courses_item align-items-center">
-            <a class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-              <div class="ag-courses-item_title pt-3">
-                Direct <br> Sales
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a  class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-              <div class="ag-courses-item_title pt-3">
-                Flexible Return on Investment
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a  class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-              <div class="ag-courses-item_title pt-3">
-                Secured Fixed Investment
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-              <div class="ag-courses-item_title pt-3">
-                Flexible Investment & Withdrawal
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a  class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-              <div class="ag-courses-item_title pt-3">
-                Buy Back
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-              <div class="ag-courses-item_title pt-3">
-                Risk Free & Secure Investment
-              </div>
-            </a>
-          </div>
-      
-          <div class="ag-courses_item">
-            <a  class="ag-courses-item_link">
-              <div class="ag-courses-item_bg">
-              </div>
-              <div class="ag-courses-item_title pt-3">
-                No Gap for<br> Investment
-              </div>
-            </a>
-          </div>
-      
-      
-        </div>
-      </div>  
-    
-    </div> 
-  </div>
-</section>
-
-
-      <!-- about-section -->
-      <!-- <section class="about-section about-page pb-0 home-about">
-        <div class="auto-container"style="background-color: #040514d9">
-          <div class="inner-container">
-            <div class="row align-items-center clearfix">
-              <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                <div class="content_block_3">
-                  <div class="content-box">
-                    <div class="sec-title">
-                      <h5 style="color:white">About</h5>
-                      <h2 class="about-sec">
-                        Welcome to our real estate banking management website!
-                      </h2>
-                    </div>
-                    <div class="text">
-                      <p class="about-sec">
-                        We are dedicated to providing you with the best possible
-                        resources and services to help you manage your real
-                        estate banking needs. Our platform is designed to
-                        provide efficient and effective financial solutions for
-                        real estate investors, and Investors . Our experienced
-                        team of banking and real estate professionals understand
-                        the complexities of the industry and work to provide
-                        tailored solutions to meet your unique needs.
-                      </p>
-                    </div>
-                    <div class="btn-box">
-                      <a href="about.html" class="theme-btn btn-one"
-                        >Read More</a
-                      >
-                    </div>
+        <div class="row clearfix">
+          <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+            <div class="feature-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <figure class="image">
+                    <img src="assets/images/resource/baramati.jpg" alt="" />
+                  </figure>
+                  <div class="batch"><i class="icon-11"></i></div>
+                  <span class="category">Featured</span>
+                </div>
+                <div class="lower-content">
+                  <div class="title-text">
+                    <h4>
+                      <a href="property-details.html">
+                        Baramati – Vrundavan</a>
+                    </h4>
                   </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                <div class="image_block_2">
-                  <div class="image-box">
-                    <figure class="image">
-                      <img src="assets/images/resource/about-1.jpg" alt="" />
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <!-- about-section end -->
-
-      <!-- category-section -->
-      <section class="category-section centred">
-        <div class="auto-container">
-          <div
-            class="inner-container wow slideInLeft animated"
-            data-wow-delay="00ms"
-            data-wow-duration="2500ms"
-          >
-            <div class="sec-title centred">
-              <h2>Project Cost Managements</h2>
-              <p>
-                (Differences between cost management of traditional industry and
-                real estate banking management)<br />Project cost management is
-                the major and important task of P & L Management <br />
-                In traditional real estate Industry , Project cost is being
-                designed on 6 following components.
-              </p>
-            </div>
-            <ul class="category-list clearfix">
-              <li>
-                <div class="category-block-one">
-                  <div class="inner-box">
-                    <div class="icon-box"><i class="icon-1"></i></div>
-                    <h5><a href="property-details.html">Land cost</a></h5>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="category-block-one">
-                  <div class="inner-box">
-                    <div class="icon-box"><i class="icon-2"></i></div>
-                    <h5><a href="property-details.html">Profit</a></h5>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="category-block-one">
-                  <div class="inner-box">
-                    <div class="icon-box"><i class="icon-3"></i></div>
-                    <h5>
-                      <a href="property-details.html">Construction cost</a>
-                    </h5>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="category-block-one">
-                  <div class="inner-box">
-                    <div class="icon-box"><i class="icon-4"></i></div>
-                    <h5><a href="property-details.html">Marketing cost</a></h5>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="category-block-one">
-                  <div class="inner-box">
-                    <div class="icon-box"><i class="icon-5"></i></div>
-                    <h5>
-                      <a href="property-details.html">Funds and finance cost</a>
-                    </h5>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="category-block-one">
-                  <div class="inner-box">
-                    <div class="icon-box"><i class="icon-5"></i></div>
-                    <h5>
-                      <a href="property-details.html"
-                        >Authorities and compliances cost</a
-                      >
-                    </h5>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <div class="btn-box">
-              <a href="dev.html" class="theme-btn btn-one">Read More</a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- category-section end -->
-
-      <!-- feature-style-three -->
-      <!-- <section class="feature-style-three service-page centred home-service"style="background-color:#80808026">
-        <div class="auto-container">
-          <div class="sec-title centred">
-            <h5>Services</h5>
-            <h2>Our Services</h2>
-          </div>
-          <div class="row clearfix">
-            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-              <div
-                class="feature-block-two wow fadeInUp animated"
-                data-wow-delay="00ms"
-                data-wow-duration="1500ms"
-              >
-                <div class="inner-box">
-                  <div class="icon-box"><i class="icon-24"></i></div>
-                  <h4>Real Estate Financing</h4>
-                  <p>
-                    We provide flexible and customized financing solutions for a
-                    variety of real estate projects, including commercial,
-                    industrial, and residential properties. Our financing
-                    options include project loans, lines of credit and
-                    construction based financial aids
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-              <div
-                class="feature-block-two wow fadeInUp animated"
-                data-wow-delay="300ms"
-                data-wow-duration="1500ms"
-              >
-                <div class="inner-box">
-                  <div class="icon-box"><i class="icon-25"></i></div>
-                  <h4>Investment Management</h4>
-                  <p>
-                    We offer investment management services to help you make
-                    informed investment decisions and maximize your returns. Our
-                    investment advisors work with you to develop a customized
-                    investment strategy that aligns with your goals and risk
-                    tolerance.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-              <div
-                class="feature-block-two wow fadeInUp animated"
-                data-wow-delay="600ms"
-                data-wow-duration="1500ms"
-              >
-                <div class="inner-box">
-                  <div class="icon-box"><i class="icon-26"></i></div>
-                  <h4>Wealth Management</h4>
-                  <p>
-                    Our wealth management services provide comprehensive
-                    financial planning and investment management solutions for
-                    high net worth individuals and families. We help you build
-                    and preserve wealth over the long term, with a focus on
-                    minimizing taxes and maximizing returns.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <!-- feature-style-three end -->
-
-      <!-- feature-section -->
-      <section class="feature-section sec-pad bg-color-1">
-        <div class="auto-container">
-          <div class="sec-title centred">
-            <h5>Features</h5>
-            <h2>Our Property</h2>
-          </div>
-          <div class="row clearfix">
-            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-              <div
-                class="feature-block-one wow fadeInUp animated"
-                data-wow-delay="00ms"
-                data-wow-duration="1500ms"
-              >
-                <div class="inner-box">
-                  <div class="image-box">
-                    <figure class="image">
-                      <img src="assets/images/resource/baramati.jpg" alt="" />
-                    </figure>
-                    <div class="batch"><i class="icon-11"></i></div>
-                    <span class="category">Featured</span>
-                  </div>
-                  <div class="lower-content">
-                    <div class="title-text">
+                  <div class="price-box clearfix">
+                    <div class="price-info pull-left">
+                      <h6>Start From</h6>
                       <h4>
-                        <a href="property-details.html">
-                          Baramati – Vrundavan</a
-                        >
-                      </h4>
-                    </div>
-                    <div class="price-box clearfix">
-                      <div class="price-info pull-left">
-                        <h6>Start From</h6>
-                        <h4>
-                          <span
-                            style="
+                        <span style="
                               font-size: 16px;
                               margin-right: 5px;
                               color: #000;
-                            "
-                            >Rs</span
-                          >4,000/-SQFT
-                        </h4>
-                      </div>
-                      <!-- <ul class="other-option pull-right clearfix">
+                            ">Rs</span>4,000/-SQFT
+                      </h4>
+                    </div>
+                    <!-- <ul class="other-option pull-right clearfix">
                         <li>
                           <a href="property-details.html"
                             ><i class="icon-12"></i
@@ -1445,59 +1015,48 @@
                           ></a>
                         </li>
                       </ul> -->
-                    </div>
+                  </div>
 
-                    <ul class="more-details clearfix">
-                      <li><i class="icon-14"></i>1 Beds</li>
-                      <li><i class="icon-15"></i>1 Baths</li>
-                      <li><i class="icon-16"></i>600 Sq.Ft</li>
-                    </ul>
-                    <div class="btn-box">
-                      <a href="property-details.html" class="theme-btn btn-two"
-                        >See Details</a
-                      >
-                    </div>
+                  <ul class="more-details clearfix">
+                    <li><i class="icon-14"></i>1 Beds</li>
+                    <li><i class="icon-15"></i>1 Baths</li>
+                    <li><i class="icon-16"></i>600 Sq.Ft</li>
+                  </ul>
+                  <div class="btn-box">
+                    <a href="property-details.html" class="theme-btn btn-two">See Details</a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-              <div
-                class="feature-block-one wow fadeInUp animated"
-                data-wow-delay="300ms"
-                data-wow-duration="1500ms"
-              >
-                <div class="inner-box">
-                  <div class="image-box">
-                    <figure class="image">
-                      <img src="assets/images/resource/nashik.jpg" alt="" />
-                    </figure>
-                    <div class="batch"><i class="icon-11"></i></div>
-                    <span class="category">Featured</span>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+            <div class="feature-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <figure class="image">
+                    <img src="assets/images/resource/nashik.jpg" alt="" />
+                  </figure>
+                  <div class="batch"><i class="icon-11"></i></div>
+                  <span class="category">Featured</span>
+                </div>
+                <div class="lower-content">
+                  <div class="title-text">
+                    <h4>
+                      <a href="property-details-1.html">Nashik - Vasundhara</a>
+                    </h4>
                   </div>
-                  <div class="lower-content">
-                    <div class="title-text">
+                  <div class="price-box clearfix">
+                    <div class="price-info pull-left">
+                      <h6>Start From</h6>
                       <h4>
-                        <a href="property-details-1.html"
-                          >Nashik - Vasundhara</a
-                        >
-                      </h4>
-                    </div>
-                    <div class="price-box clearfix">
-                      <div class="price-info pull-left">
-                        <h6>Start From</h6>
-                        <h4>
-                          <span
-                            style="
+                        <span style="
                               font-size: 16px;
                               margin-right: 5px;
                               color: #000;
-                            "
-                            >Rs</span
-                          >18,24,900
-                        </h4>
-                      </div>
-                      <!-- <ul class="other-option pull-right clearfix">
+                            ">Rs</span>18,24,900
+                      </h4>
+                    </div>
+                    <!-- <ul class="other-option pull-right clearfix">
                         <li>
                           <a href="property-details-1.html"
                             ><i class="icon-12"></i
@@ -1509,60 +1068,50 @@
                           ></a>
                         </li>
                       </ul> -->
-                    </div>
+                  </div>
 
-                    <ul class="more-details clearfix">
-                      <li><i class="icon-14"></i>1 Beds</li>
-                      <li><i class="icon-15"></i>1 Baths</li>
-                      <li><i class="icon-16"></i>545 Sq Ft</li>
-                    </ul>
-                    <div class="btn-box">
-                      <a
-                        href="property-details-1.html"
-                        class="theme-btn btn-two"
-                        >See Details</a
-                      >
-                    </div>
+                  <ul class="more-details clearfix">
+                    <li><i class="icon-14"></i>1 Beds</li>
+                    <li><i class="icon-15"></i>1 Baths</li>
+                    <li><i class="icon-16"></i>545 Sq Ft</li>
+                  </ul>
+                  <div class="btn-box">
+                    <a href="property-details-1.html" class="theme-btn btn-two">See Details</a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-              <div class="feature-block-one">
-                <div class="inner-box">
-                  <div class="image-box">
-                    <figure class="image">
-                      <img src="assets/images/resource/panshet.jpg" alt="" />
-                    </figure>
-                    <div class="batch"><i class="icon-11"></i></div>
-                    <span class="category">Featured</span>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+            <div class="feature-block-one">
+              <div class="inner-box">
+                <div class="image-box">
+                  <figure class="image">
+                    <img src="assets/images/resource/panshet.jpg" alt="" />
+                  </figure>
+                  <div class="batch"><i class="icon-11"></i></div>
+                  <span class="category">Featured</span>
+                </div>
+                <div class="lower-content">
+                  <div class="title-text">
+                    <h4>
+                      <a href="property-details-2.html">Pune – Panshet - Aquabay
+
+                      </a>
+                    </h4>
                   </div>
-                  <div class="lower-content">
-                    <div class="title-text">
+                  <div class="price-box clearfix">
+                    <div class="price-info pull-left">
+                      <h6>Start From </h6>
                       <h4>
-                        <a href="property-details-2.html"
-                          >Pune – Panshet - Aquabay
-                          
-                          </a
-                        
-                        >
-                      </h4>
-                    </div>
-                    <div class="price-box clearfix">
-                      <div class="price-info pull-left">
-                        <h6>Start From </h6>
-                        <h4>
-                          <span
-                            style="
+                        <span style="
                               font-size: 16px;
                               margin-right: 5px;
                               color: #000;
-                            "
-                            >Rs</span
-                          >350/per Sq.Ft
-                        </h4>
-                      </div>
-                      <!-- <ul class="other-option pull-right clearfix">
+                            ">Rs</span>350/per Sq.Ft
+                      </h4>
+                    </div>
+                    <!-- <ul class="other-option pull-right clearfix">
                         <li>
                           <a href="property-details-2.html"
                             ><i class="icon-12"></i
@@ -1574,307 +1123,335 @@
                           ></a>
                         </li>
                       </ul> -->
-                    </div>
-                    <ul class="more-details clearfix">
-                      <li><i class="icon-16"></i>27 Acre</li>
-                    </ul>
-                    <div class="btn-box">
-                      <a
-                        href="property-details-2.html"
-                        class="theme-btn btn-two"
-                        >See Details</a
-                      >
-                    </div>
+                  </div>
+                  <ul class="more-details clearfix">
+                    <li><i class="icon-16"></i>27 Acre</li>
+                  </ul>
+                  <div class="btn-box">
+                    <a href="property-details-2.html" class="theme-btn btn-two">See Details</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="more-btn centred">
-            <a href="property-grid.html" class="theme-btn btn-one"
-              >View All Listing</a
-            >
-          </div>
         </div>
-      </section>
-      <!-- feature-section end -->
-
-      <!-- cta-section -->
-      <section class="cta-section bg-color-2">
-        <div
-          class="pattern-layer"
-          style="background-image: url(assets/images/shape/shape-2.jpg)"
-        ></div>
-        <div class="auto-container">
-          <div class="inner-box clearfix">
-            <div class="text pull-left">
-              <h2>Looking to Buy a <br />New Property.</h2>
-            </div>
-            <div class="btn-box pull-right">
-              <a href="property-grid.html" class="theme-btn btn-three"
-                >Properties</a
-              >
-            </div>
-          </div>
+        <div class="more-btn centred">
+          <a href="property-grid.html" class="theme-btn btn-one">View All Listing</a>
         </div>
-      </section>
-      <!-- cta-section end -->
+      </div>
+    </section>
+    <!-- feature-section end -->
 
-      <!-- video-section -->
-      <!-- <section
-        class="video-section centred"
-        style="background-image: url(assets/images/background/video-1.jpg)"
-      >
-        <div class="auto-container">
-          <div class="video-inner">
-            <div class="video-btn">
-              <a
-                href="assets/images/background/video.mp4"
-                class="lightbox-image"
-                data-caption=""
-                ><i class="icon-17"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <!-- video-section end -->
-
-      <!-- contact-section -->
-      <section class="contact-section bg-color-1">
-        <div class="auto-container">
-          <div class="sec-title centred">
-            <h5>contact</h5>
-            <h2>Contact Us</h2>
-          </div>
+    <!-- About Us Section -->
+    <section class="about-section about-page pb-0 pt-3">
+      <div class="auto-container"style="background-color: #040514d9;padding-top: 28px;">
+        <div class="inner-container">
           <div class="row align-items-center clearfix">
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+              <div class="image_block_2">
+                <div class="image-box">
+                  <figure class="image">
+                    <img src="assets/images/resource/about-1.jpg" alt="" />
+                  </figure>
+                </div>
+              </div>
+            </div>
             <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-              <div class="content-box">
-                <div class="form-inner">
-                  <iframe
-                    src="https://aarohiinfo.co.in/RBM_Contact_Form.html"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-12 col-sm-12 map-column">
-              <div class="google-map-area">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.5223485690603!2d73.81975707436638!3d18.45998407102373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c0ef0313fa73%3A0xd099ef63c789d366!2sAarohiinfo%20FI%20Management%20Limited!5e0!3m2!1sen!2sin!4v1681999775398!5m2!1sen!2sin"
-                  width="600"
-                  height="450"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- contact-section end -->
-
-      <!-- download-section -->
-      <section class="download-section bg-color-3">
-        <div
-          class="pattern-layer"
-          style="background-image: url(assets/images/shape/shape-3.jpg)"
-        ></div>
-        <div class="auto-container">
-          <div class="row clearfix real-wrap">
-            <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-              <h2>REAL ESTATE BANKING MANAGEMENT</h2>
-              <p>
-                Real estate banking management is the concept where AFI
-                management limited (financial institute) and construction
-                companies coming together to address the issue of decline of
-                real estate industry.
-              </p>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 content-column">
-              <div class="content_block_1">
+              <div class="content_block_3">
                 <div class="content-box">
-                  <h2>Our Social Networks</h2>
-                  <div class="download-btn">
-                    <a
-                      href="https://www.facebook.com/profile.php?id=100091671716534"
-                      class="app-store"
-                    >
-                      <i class="fab fa-facebook-f"></i>
-                      <p>Facebook</p>
-                    </a>
-                    <a
-                      href="https://www.instagram.com/realestate_banking_management/"
-                      class="google-play"
-                    >
-                      <i class="fab fa-instagram"></i>
-                      <p>Instagram</p>
-                    </a>
-                    <a
-                      href="https://www.youtube.com/@aarohiinfofimangement/playlists"
-                      class="google-play"
-                    >
-                      <i class="fab fa-youtube"></i>
-                      <p>Youtube</p>
-                    </a>
-                    <a href="https://www.linkedin.com/company/94208437">
-                      <i class="fab fa-linkedin"></i>
-                      <p>Linkedin</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- download-section end -->
-
-      <!-- main-footer -->
-      <footer class="main-footer">
-        <div class="footer-top bg-color-2">
-          <div class="auto-container">
-            <div class="row clearfix">
-              <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget about-widget">
-                  <div class="widget-title">
-                    <h3>About</h3>
+                  <div class="sec-title">
+                    <h5 style="color:white">About</h5>
+                    <h2 class="about-sec">
+                      Welcome to our real estate banking management website!
+                    </h2>
                   </div>
                   <div class="text">
-                    <p>
-                      We are dedicated to providing you with the best possible
-                      resources and services to help you manage your real estate
-                      banking needs...
+                    <p class="about-sec">
+                      We are dedicated to provide you the best possible
+                      resources and services to help you manage your real
+                      estate banking needs. Our platform is designed to
+                      provide efficient and effective financial solutions for
+                      real estate investors. Our experienced
+                      team of banking and real estate professionals understand
+                      the complexities of the industry and work to provide
+                      tailored solutions to meet your unique needs.
                     </p>
                   </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget links-widget ml-70">
-                  <div class="widget-title">
-                    <h3>Links</h3>
+                  <div class="d-flex ">
+                  <div class="btn-box m-2">
+                    <a href="contact.html" class="theme-btn btn-one"
+                      >Contact Now</a
+                    >
                   </div>
-                  <div class="widget-content">
-                    <ul class="links-list class">
-                      <li><a href="about.html">About Us</a></li>
-                      <li><a href="services.html">Services</a></li>
-                      <li><a href="dev.html">For Developers</a></li>
-                      <li><a href="invest.html">For Investors</a></li>
-                      <li><a href="why.html">Why Choose Us</a></li>
-                      <li><a href="property-grid.html">Projects</a></li>
-                      <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
+                  <div class="btn-box m-2">
+                    <a href="knowmore.html" class="theme-btn btn-one"
+                      >Know More</a
+                    >
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget post-widget">
-                  <div class="widget-title">
-                    <h3>Socials Links</h3>
-                  </div>
-                  <ul class="f-social">
-                    <li>
-                      <a
-                        href="https://www.facebook.com/profile.php?id=100091671716534"
-                        ><i class="fab fa-facebook-f"></i
-                        ><span>Facebook</span></a
-                      >
-                    </li>
-                    <li>
-                      <a href=" https://www.linkedin.com/company/94208437"
-                        ><i class="fab fa-linkedin"></i><span>Linkedin</span></a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.youtube.com/@aarohiinfofimangement/playlists"
-                        ><i class="fab fa-youtube"></i><span>Youtube</span></a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.instagram.com/realestate_banking_management/"
-                        ><i class="fab fa-instagram"></i
-                        ><span>Instagram</span></a
-                      >
-                    </li>
-                  </ul>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget contact-widget">
-                  <div class="widget-title">
-                    <h3>Contacts</h3>
-                  </div>
-                  <div class="widget-content">
-                    <ul class="info-list clearfix">
-                      <li>
-                        <i class="fas fa-map-marker-alt"></i>Sr. No 51/2A,
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Us Section -->
+
+
+    
+<!-- Why Choose Us -->
+<section class="feature-style-three service-page centred">
+  <div class="auto-container">
+    <div class="sec-title text-center">
+      <h2>Why Choose Us</h2>
+    </div>
+    <div class="row clearfix">
+     
+      <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+        <div
+          class="feature-block-two wow fadeInUp animated"
+          data-wow-delay="00ms"
+          data-wow-duration="1500ms"
+        >
+          <div class="inner-box">
+            <div class="icon-box"><i class="icon-25"></i></div>
+            <!-- <div class="icon-box"><i class="icon-24"></i></div> -->
+            <h4>Expertise</h4>
+            <p>
+              We offer customized solutions to meet your specific banking
+              needs. We take the time to understand your goals and develop
+              a personalized plan to help you achieve them.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+        <div
+          class="feature-block-two wow fadeInUp animated"
+          data-wow-delay="300ms"
+          data-wow-duration="1500ms"
+        >
+          <div class="inner-box">
+            <div class="icon-box"><i class="icon-29"></i></div>
+            <!-- <div class="icon-box"><i class="icon-25"></i></div> -->
+            <h4>Exceptional Service</h4>
+            <p>
+              We are committed to deliver an exceptional customer service
+              and build long-term relationships with our clients. We
+              are always available to answer your questions and provide
+              support when you need it.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+        <div
+          class="feature-block-two wow fadeInUp animated"
+          data-wow-delay="600ms"
+          data-wow-duration="1500ms"
+        >
+          <div class="inner-box">
+            <div class="icon-box"><i class="icon-27"></i></div>
+            <!-- <div class="icon-box"><i class="icon-26"></i></div> -->
+            <h4>Trust</h4>
+            <p>
+              We understand that managing your real estate banking needs
+              requires a high level of trust. We are committed to earn
+              and maintain your trust through transparency, honesty,
+              and integrity.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+        <div
+          class="feature-block-two wow fadeInUp animated"
+          data-wow-delay="600ms"
+          data-wow-duration="1500ms"
+        >
+          <div class="inner-box">
+            <div class="icon-box"><i class="icon-26"></i></div>
+            <h4>Real Estate Investment</h4>
+            <p>
+              We understand the importance of identifying profitable
+              investment opportunities in real estate. Our team provides
+              expert advice and analysis to help you make informed
+              investment decisions and maximize your returns.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+        <div
+          class="feature-block-two wow fadeInUp animated"
+          data-wow-delay="600ms"
+          data-wow-duration="1500ms"
+        >
+          <div class="inner-box">
+            <div class="icon-box"><i class="icon-19"></i></div>
+            <h4>Real Estate Development</h4>
+            <p>
+              Our team has experience in managing complex real estate
+              development projects. We provide financing solutions and
+              expert advice to help you navigate the development process
+              and bring your project to completion.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+        <div
+          class="feature-block-two wow fadeInUp animated"
+          data-wow-delay="600ms"
+          data-wow-duration="1500ms"
+        >
+          <div class="inner-box">
+            <div class="icon-box"><i class="icon-24"></i></div>
+            <h4>Real Estate Banking Investment</h4>
+            <p>
+              At our real estate banking management , we are committed to
+              provide exceptional service and customized solutions to
+              meet your real estate financial needs. Contact us today to
+              learn more about how we can help you achieve your real
+              estate goals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Why Choose Us -->
+
+
+
+
+
+
+
+  
+
+      <!-- <div class="menu-container">
+        <div class="collapse-icon">
+          <i class="fa-solid fa-share"></i>
+        </div>
+        <a href="https://www.instagram.com/realestate_banking_management/" target="_blank" class="menu-item">
+          <i class="fa-instagram"></i>
+          <div class="menu-item-text">Instagram</div>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=10009167171653" target="_blank" class="menu-item">
+          <i class="fa fa-facebook"></i> 
+          <div class="menu-item-text">Facebook</div>
+        </a>
+        
+        <a href="https://www.linkedin.com/company/94208437" target="_blank" class="menu-item">
+          <i class="fa fa-linkedin"></i>
+          <div class="menu-item-text">Linkedin</div>
+        </a>
+         <a href="https://www.youtube.com/@aarohiinfofimangement/playlists"target="_blank" class="menu-item">
+          <i class="fa fa-youtube"></i>
+          <div class="menu-item-text">Youtube</div>
+        </a>
+      </div> -->
+    
+    <footer class="main-footer" >
+
+      <div class="footer-bottom">
+        <div class="row">
+          <div class="col-lg-2 col-12 d-flex justify-content-center align-items-center my-2 flex-column">
+           <img src="./assets/images/rbm.png" class="footer-logo-img">
+            <div class="ml-2">
+              <a href=" https://www.facebook.com/profile.php?id=100091671716534"><i
+                class="fab fa-facebook-f m-1" style="color: #0b2032;"></i></a>
+    <a href="https://www.linkedin.com/company/94208437">
+      <i class="fab fa-linkedin m-1"  style="color: #0b2032;"></i></a>
+  <a href="https://www.youtube.com/@aarohiinfofimangement/playlists"><i
+                class="fab fa-youtube m-1"  style="color: #0b2032;"></i></a>
+    <a href="https://www.instagram.com/realestate_banking_management/"><i
+                class="fab fa-instagram m-1"  style="color: #0b2032;"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-5 col-12 d-flex justify-content-center align-items-center my-2">
+            <p style="text-align: center;">
+              Sr. No 51/2A,
                         Navale Icon 3rd floor Office No. 301, Opp Navale Bridge,
                         Mumbai-Bangalore Highway, Narhe Pune, Maharashtra
                         411041.
-                      </li>
-                      <li>
-                        <i class="fas fa-microphone"></i
-                        ><a href="tel:7263968850">+917263968850</a>
-                      </li>
-                      <li>
-                        <i class="fas fa-envelope"></i
-                        ><a href="deepaktirveer@ssdmultistate.com"
-                          >deepaktirveer@ssdmultistate.com</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </p>
           </div>
-        </div>
-        <div class="footer-bottom">
-          <div class="auto-container">
-            <div class="inner-box clearfix">
-              <figure class="footer-logo">
-                <a href="index.html"
-                  ><img src="assets/images/RBM LOGO PNG-01.jpg" alt=""
-                /></a>
-              </figure>
-              <div class="copyright pull-left">
-                <p>
-                  <a href="index.html">RBM</a> &copy; 2023 All Right Reserved
-                </p>
-              </div>
-            </div>
+
+          <div class="col-lg-3 col-12 d-flex justify-content-center align-items-center my-2 text-center">
+            <ul>
+              <li>
+                <i class="fas fa-microphone m-1"></i
+                ><a href="tel:7263968850">+91 7263968850</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope m-1"></i
+                ><a href="deepaktirveer@ssdmultistate.com"
+                  >deepaktirveer@ssdmultistate.com</a
+                >
+              </li>
+            </ul>
           </div>
+          <div class="col-lg-2 col-12 d-flex justify-content-center align-items-center my-2">
+            <p style="font-size: 18px;font-weight: 500;">
+              Powered by AIT
+            </p>
+          </div>
+          
         </div>
-      </footer>
-      <!-- main-footer end -->
+      </div>
+    </footer> 
+    
+    <!-- main-footer end -->
 
-      <!--Scroll to top-->
-      <button class="scroll-top scroll-to-target" data-target="html">
-        <span class="fal fa-angle-up"></span>
-      </button>
-    </div>
+    <!--Scroll to top-->
+    <button class="scroll-top scroll-to-target" data-target="html">
+      <span class="fal fa-angle-up"></span>
+    </button>
+  </div>
 
-    <!-- jequery plugins -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/validation.js"></script>
-    <script src="assets/js/jquery.fancybox.js"></script>
-    <script src="assets/js/appear.js"></script>
-    <script src="assets/js/scrollbar.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/jQuery.style.switcher.min.js"></script>
-    <script src="assets/js/jquery-ui.js"></script>
-    <script src="assets/js/nav-tool.js"></script>
 
-    <!-- main-js -->
-    <script src="assets/js/script.js"></script>
-  </body>
-  <!-- End of .page_wrapper -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZDHJZCXXS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+  
+      gtag("config", "G-7ZDHJZCXXS");
+    </script>
+  <!-- jequery plugins -->
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/owl.js"></script>
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/jquery.fancybox.js"></script>
+  <script src="assets/js/appear.js"></script>
+  <script src="assets/js/scrollbar.js"></script>
+  <script src="assets/js/isotope.js"></script>
+  <script src="assets/js/jquery.nice-select.min.js"></script>
+  <script src="assets/js/jQuery.style.switcher.min.js"></script>
+  <script src="assets/js/jquery-ui.js"></script>
+  <script src="assets/js/nav-tool.js"></script>
+  
+  <script src="assets/js/product-filter.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- main-js -->
+  <script src="assets/js/script.js"></script>
+</body>
+<!-- End of .page_wrapper -->
+
 </html>

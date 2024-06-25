@@ -51,6 +51,62 @@
 
       gtag("config", "G-7ZDHJZCXXS");
     </script>
+   
+
+   <style>
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 50px;
+  
+    }
+  
+  
+    .floating-button {
+  padding: 10px;
+  border-radius: 5px;
+  animation: pulse 1s infinite;
+  }
+  
+  
+  
+  @keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+  }
+  
+  .floating-button:after, 
+  .floating-button:before {
+  width: 100%;
+  height: 100%;
+  border-radius: 5%;
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+   -webkit-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+   -webkit-animation-delay: .9s;
+   animation-delay: .9s;
+   content: "";
+   position: absolute;
+   -webkit-box-shadow: 0 0 0 0 rgba(235, 98, 35, 0.9);
+   box-shadow: 0 0 0 0 rgba(224, 65, 37, 0.9);
+   -webkit-animation: ripple 3s infinite;
+   animation: ripple 3s infinite;
+   -webkit-transition: all .4s ease;
+   transition: all .4s ease;
+  }
+  .floating-button:after {
+  -webkit-animation-delay: .6s;
+  animation-delay: .6s;
+  }
+  </style>
+  
   </head>
 
   <!-- page wrapper -->
@@ -64,6 +120,7 @@
             <div class="animation-preloader">
               <div class="spinner"></div>
               <div class="txt-loading">
+                <span data-text-preloader="A" class="letters-loading"> A </span>
                 <span data-text-preloader="R" class="letters-loading"> R </span>
                 <span data-text-preloader="B" class="letters-loading"> B </span>
                 <span data-text-preloader="M" class="letters-loading"> M </span>
@@ -77,47 +134,6 @@
       <!-- main header -->
       <header class="main-header">
         <!-- header-top -->
-        <div class="header-top">
-          <div class="top-inner clearfix">
-            <div class="left-column pull-left">
-              <ul class="info clearfix">
-                <li><i class="far fa-map-marker-alt"></i>Navale Icon, Pune</li>
-                <li><i class="far fa-clock"></i>Mon - Fri 9.00 - 5.00</li>
-                <li>
-                  <i class="far fa-phone"></i
-                  ><a href="tel:7263968850">+91 7263968850</a>
-                </li>
-              </ul>
-            </div>
-            <div class="right-column pull-right">
-              <ul class="social-links clearfix">
-                <li>
-                  <a
-                    href=" https://www.facebook.com/profile.php?id=10009167171653"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href=" https://www.linkedin.com/company/94208437"
-                    ><i class="fab fa-linkedin"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.youtube.com/@aarohiinfofimangement/playlists"
-                    ><i class="fab fa-youtube"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.instagram.com/realestate_banking_management/"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
         <!-- header-lower -->
         <div class="header-lower">
           <div class="outer-box">
@@ -125,8 +141,7 @@
               <div class="logo-box">
                 <figure class="logo">
                   <a href="index.html"
-                    ><img src="assets/images/RBM_White_Logo.png" alt=""width= "156%" height="83px"
-                  /></a>
+                    ><img src="assets/images/rbm.png" alt="" width= "117%" height="70px" /></a>
                 </figure>
               </div>
               <div class="menu-area clearfix">
@@ -142,10 +157,16 @@
                     id="navbarSupportedContent"
                   >
                     <ul class="navigation clearfix">
-                      <li class="current">
+                      <li>
+                        <a href="http://rbm.aitpro.in/">
+                          <button class="floating-button text-light" style="background-color: #ff4800;">RealTech
+                          </button></a>            
+                          </li>
+                      <li class="">
                         <a href="index.html"><span>Home</span></a>
                       </li>
-                      <li class="">
+                      
+                      <!-- <li class="">
                         <a href="about.html"><span>About us</span></a>
                       </li>
                       <li class="">
@@ -157,15 +178,60 @@
                           <li><a href="dev.html">For Developers</a></li>
                           <li><a href="invest.html">For Investors</a></li>
                         </ul>
+                      </li> -->
+                      <li class="">
+                        <a href="dev.html"><span>Builders & Developers</span></a>
                       </li>
                       <li class="">
-                        <a href="property-grid.html"><span>Projects</span></a>
+                        <a href="invest.html"><span>Buyers & Investors</span></a>
                       </li>
-                      
+                      <!-- <li class="">
+                        <a href="property-grid.html"><span>Projects</span></a>
+                      </li> -->
+                      <!-- <li class="dropdown">
+                        <a href="services.html"><span>Internet Banking</span></a>
+                        <ul>
+                          <li><a href="">Account Openning</a></li>
+                          <li><a href="https://banking.ssdmultistate.com/login">Net Banking</a></li>
+                        </ul>
+                      </li> -->
+                      <li class="">
+                        <a href="https://ssdmultistate.com/"><span>SSD Multistate</span></a>
+                      </li>
+                      <!-- <li class="">
+                        <a href="https://prop.vu/the_leisure_lagoons"><span>Virtual Projects Tour</span></a>
+                      </li> -->
+                      <!-- <li class="dropdown">
+                        <a href="services.html"><span>Fintech</span></a>
+                        <ul>
+                          <li><a href="">Account Openning</a></li>
+                          <li><a href="https://http://rbm.aitpro.in">Digital Investment Dashboard</a></li>
+                        </ul>
+                      </li> -->
                       <li>
                         <a href="contact.html"><span>Contact</span></a>
                       </li>
+                    
+                      <!-- <li class="  " >
+                      <a href="http://rbm.aitpro.in/">
+                        <button class="btn pl-2 floating-button text-light" style="background-color: #ff4800;" ><span>Fintech</span></button> 
+                      </a>
+                      </li> -->
+                     
+                      </ul>
+                      
                     </ul>
+                    
+                    <!-- <div class="dropdown">
+                      <button class="dropbtn floating-button" style="right: -856px;top:-104px; background-color: #ff4800;">Fintech</button>
+                      <div class="dropdown-content" style="right:-875 !important;">
+                        <a href="#">Account Opening</a>
+                        <a href="#">Net Banking</a>
+                      </div>
+                    </div> -->
+
+                   
+            
                   </div>
                 </nav>
               </div>
@@ -180,10 +246,11 @@
               <div class="logo-box">
                 <figure class="logo">
                   <a href="index.html"
-                    ><img src="assets/images/RBM_White_Logo.png" alt=""width= "156%" height="83px"
+                    ><img src="assets/images/rbm.png" alt=""width= "117%" height="70px"
                   /></a>
                 </figure>
               </div>
+             
               <div class="menu-area clearfix">
                 <nav class="main-menu clearfix">
                   <!--Keep This Empty / Menu will come through Javascript-->
@@ -254,167 +321,16 @@
       <!-- End Mobile Menu -->
 
       <!--Page Title-->
-      <section class="page-title-two bg-color-1 centred">
-        <div class="pattern-layer">
-          <div
-            class="pattern-1"
-            style="background-image: url(assets/images/shape/shape-9.jpg)"
-          ></div>
-          <div
-            class="pattern-2"
-            style="background-image: url(assets/images/shape/shape-10.jpg)"
-          ></div>
-        </div>
-        <div class="auto-container">
-          <div class="content-box clearfix">
-            <h1>Projects</h1>
-            <ul class="bread-crumb clearfix">
-              <li><a href="index.html">Home</a></li>
-              <li>Projects</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+  
       <!--End Page Title-->
 
       <!-- property-page-section -->
       <section class="property-page-section property-grid">
         <div class="auto-container">
           <div class="row clearfix">
-            <!-- <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
-                        <div class="default-sidebar property-sidebar">
-                            <div class="filter-widget sidebar-widget">
-                                <div class="widget-title">
-                                    <h5>Property</h5>
-                                </div>
-                                <div class="widget-content">
-                                    <div class="select-box">
-                                        <select class="wide">
-                                           <option data-display="All Type">All Type</option>
-                                           <option value="1">Villa</option>
-                                           <option value="2">Commercial</option>
-                                           <option value="3">Residential</option>
-                                        </select>
-                                    </div>
-                                    <div class="select-box">
-                                        <select class="wide">
-                                           <option data-display="Select Location">Select Location</option>
-                                           <option value="1">New York</option>
-                                           <option value="2">California</option>
-                                           <option value="3">London</option>
-                                           <option value="4">Maxico</option>
-                                        </select>
-                                    </div>
-                                    <div class="select-box">
-                                        <select class="wide">
-                                           <option data-display="This Area Only">This Area Only</option>
-                                           <option value="1">New York</option>
-                                           <option value="2">California</option>
-                                           <option value="3">London</option>
-                                           <option value="4">Maxico</option>
-                                        </select>
-                                    </div>
-                                    <div class="select-box">
-                                        <select class="wide">
-                                           <option data-display="All Type">Max Rooms</option>
-                                           <option value="1">2+ Rooms</option>
-                                           <option value="2">3+ Rooms</option>
-                                           <option value="3">4+ Rooms</option>
-                                           <option value="4">5+ Rooms</option>
-                                        </select>
-                                    </div>
-                                    <div class="select-box">
-                                        <select class="wide">
-                                           <option data-display="Most Popular">Most Popular</option>
-                                           <option value="1">Villa</option>
-                                           <option value="2">Commercial</option>
-                                           <option value="3">Residential</option>
-                                        </select>
-                                    </div>
-                                    <div class="select-box">
-                                        <select class="wide">
-                                           <option data-display="All Type">Select Floor</option>
-                                           <option value="1">2x Floor</option>
-                                           <option value="2">3x Floor</option>
-                                           <option value="3">4x Floor</option>
-                                        </select>
-                                    </div>
-                                    <div class="filter-btn">
-                                        <button type="submit" class="theme-btn btn-one"><i class="fas fa-filter"></i>&nbsp;Filter</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="price-filter sidebar-widget">
-                                <div class="widget-title">
-                                    <h5>Select Price Range</h5>
-                                </div>
-                                <div class="range-slider clearfix">
-                                    <div class="clearfix">
-                                        <div class="input">
-                                            <input type="text" class="property-amount" name="field-name" readonly="">
-                                        </div>
-                                    </div>
-                                    <div class="price-range-slider"></div>
-                                </div>
-                            </div>
-                            <div class="category-widget sidebar-widget">
-                                <div class="widget-title">
-                                    <h5>Status Of Property</h5>
-                                </div>
-                                <ul class="category-list clearfix">
-                                    <li><a href="property-details.html">For Rent <span>(200)</span></a></li>
-                                    <li><a href="property-details.html">For Sale <span>(700)</span></a></li>
-                                </ul>
-                            </div>
-                            <div class="category-widget sidebar-widget">
-                                <div class="widget-title">
-                                    <h5>Amenities</h5>
-                                </div>
-                                <ul class="category-list clearfix">
-                                    <li><a href="property-details.html">Air Conditioning <span>(17)</span></a></li>
-                                    <li><a href="property-details.html">Central Heating <span>(4)</span></a></li>
-                                    <li><a href="property-details.html">Cleaning Service <span>(12)</span></a></li>
-                                    <li><a href="property-details.html">Dining Room <span>(8)</span></a></li>
-                                    <li><a href="property-details.html">Dishwasher <span>(5)</span></a></li>
-                                    <li><a href="property-details.html">Dishwasher <span>(2)</span></a></li>
-                                    <li><a href="property-details.html">Family Room <span>(19)</span></a></li>
-                                    <li><a href="property-details.html">Onsite Parking <span>(11)</span></a></li>
-                                    <li><a href="property-details.html">Fireplace <span>(7)</span></a></li>
-                                    <li><a href="property-details.html">Hardwood Flows <span>(9)</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
             <div class="col-lg-12 col-md-12 col-sm-12 content-side">
               <div class="property-content-side">
-                <div class="item-shorting clearfix">
-                  <!-- <div class="left-column pull-left">
-                    <h5>
-                      Search Reasults: <span>Showing 1-5 of 20 Listings</span>
-                    </h5>
-                  </div> -->
-                  <!-- <div class="right-column pull-right clearfix">
-                    <div class="short-box clearfix">
-                      <div class="select-box">
-                        <select class="wide">
-                          <option data-display="Sort by: Newest">
-                            Sort by: Newest
-                          </option>
-                          <option value="1">New Arrival</option>
-                          <option value="2">Top Rated</option>
-                          <option value="3">Offer Place</option>
-                          <option value="4">Most Place</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="short-menu clearfix">
-                      <button class="list-view"><i class="icon-35"></i></button>
-                      <button class="grid-view on">
-                        <i class="icon-36"></i>
-                      </button>
-                    </div>
-                  </div> -->
-                </div>
+               
                 <div class="wrapper grid">
                   <div class="deals-grid-content grid-item">
                     <div class="row clearfix">
@@ -636,180 +552,59 @@
       </section>
       <!-- property-page-section end -->
 
-      <!-- download-section -->
-      <section class="download-section bg-color-3">
-        <div
-          class="pattern-layer"
-          style="background-image: url(assets/images/shape/shape-3.jpg)"
-        ></div>
-        <div class="auto-container">
-          <div class="row clearfix real-wrap">
-            <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-              <h2>REAL ESTATE BANKING MANAGEMENT</h2>
-              <p>
-                Real estate banking management is the concept where AFI
-                management limited (financial institute) and construction
-                companies coming together to address the issue of decline of
-                real estate industry.
+   
+      <!-- main-footer -->
+      
+      <footer class="main-footer">
+
+        <div class="footer-bottom">
+          <div class="row">
+            <div class="col-lg-2 col-12 d-flex justify-content-center align-items-center my-2 flex-column">
+             <img src="./assets/images/rbm.png" class="footer-logo-img">
+              <div class="ml-2">
+                <a href=" https://www.facebook.com/profile.php?id=100091671716534"><i
+                  class="fab fa-facebook-f m-1" style="color: #0b2032;"></i></a>
+      <a href="https://www.linkedin.com/company/94208437">
+        <i class="fab fa-linkedin m-1"  style="color: #0b2032;"></i></a>
+    <a href="https://www.youtube.com/@aarohiinfofimangement/playlists"><i
+                  class="fab fa-youtube m-1"  style="color: #0b2032;"></i></a>
+      <a href="https://www.instagram.com/realestate_banking_management/"><i
+                  class="fab fa-instagram m-1"  style="color: #0b2032;"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-5 col-12 d-flex justify-content-center align-items-center my-2">
+              <p style="text-align: center;">
+                Sr. No 51/2A,
+                          Navale Icon 3rd floor Office No. 301, Opp Navale Bridge,
+                          Mumbai-Bangalore Highway, Narhe Pune, Maharashtra
+                          411041.
               </p>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 content-column">
-              <div class="content_block_1">
-                <div class="content-box">
-                  <h2>Our Social Networks</h2>
-                  <div class="download-btn">
-                    <a
-                      href="https://www.facebook.com/profile.php?id=100091671716534"
-                      class="app-store"
-                    >
-                      <i class="fab fa-facebook-f"></i>
-                      <p>Facebook</p>
-                    </a>
-                    <a
-                      href="https://www.instagram.com/realestate_banking_management/"
-                      class="google-play"
-                    >
-                      <i class="fab fa-instagram"></i>
-                      <p>Instagram</p>
-                    </a>
-                    <a
-                      href="https://www.youtube.com/@aarohiinfofimangement/playlists"
-                      class="google-play"
-                    >
-                      <i class="fab fa-youtube"></i>
-                      <p>Youtube</p>
-                    </a>
-                    <a href="https://www.linkedin.com/company/94208437">
-                      <i class="fab fa-linkedin"></i>
-                      <p>Linkedin</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
+  
+            <div class="col-lg-3 col-12 d-flex justify-content-center align-items-center my-2 text-center">
+              <ul>
+                <li>
+                  <i class="fas fa-microphone m-1"></i
+                  ><a href="tel:7263968850">+91 7263968850</a>
+                </li>
+                <li>
+                  <i class="fas fa-envelope m-1"></i
+                  ><a href="deepaktirveer@ssdmultistate.com"
+                    >deepaktirveer@ssdmultistate.com</a
+                  >
+                </li>
+              </ul>
             </div>
+            <div class="col-lg-2 col-12 d-flex justify-content-center align-items-center my-2">
+              <p style="font-size: 18px;font-weight: 500;">
+                Powered by AIT
+              </p>
+            </div>
+            
           </div>
         </div>
-      </section>
-      <!-- download-section end -->
+      </footer> 
 
-      <!-- main-footer -->
-      <footer class="main-footer">
-        <div class="footer-top bg-color-2">
-          <div class="auto-container">
-            <div class="row clearfix">
-              <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget about-widget">
-                  <div class="widget-title">
-                    <h3>About</h3>
-                  </div>
-                  <div class="text">
-                    <p>
-                      We are dedicated to providing you with the best possible
-                      resources and services to help you manage your real estate
-                      banking needs...
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget links-widget ml-70">
-                  <div class="widget-title">
-                    <h3>Links</h3>
-                  </div>
-                  <div class="widget-content">
-                    <ul class="links-list class">
-                      <li><a href="about.html">About Us</a></li>
-                      <li><a href="services.html">Services</a></li>
-                      <li><a href="dev.html">For Developers</a></li>
-                      <li><a href="invest.html">For Investors</a></li>
-                      <li><a href="why.html">Why Choose Us</a></li>
-                      <li><a href="property-grid.html">Projects</a></li>
-                      <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget post-widget">
-                  <div class="widget-title">
-                    <h3>Socials Links</h3>
-                  </div>
-                  <ul class="f-social">
-                    <li>
-                      <a
-                        href="https://www.facebook.com/profile.php?id=100091671716534"
-                        ><i class="fab fa-facebook-f"></i
-                        ><span>Facebook</span></a
-                      >
-                    </li>
-                    <li>
-                      <a href=" https://www.linkedin.com/company/94208437"
-                        ><i class="fab fa-linkedin"></i><span>Linkedin</span></a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.youtube.com/@aarohiinfofimangement/playlists"
-                        ><i class="fab fa-youtube"></i><span>Youtube</span></a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.instagram.com/realestate_banking_management/"
-                        ><i class="fab fa-instagram"></i
-                        ><span>Instagram</span></a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                <div class="footer-widget contact-widget">
-                  <div class="widget-title">
-                    <h3>Contacts</h3>
-                  </div>
-                  <div class="widget-content">
-                    <ul class="info-list clearfix">
-                      <li>
-                        <i class="fas fa-map-marker-alt"></i>Sr. No 51/2A,
-                        Navale Icon 3rd floor Office No. 301, Opp Navale Bridge,
-                        Mumbai-Bangalore Highway, Narhe Pune, Maharashtra
-                        411041.
-                      </li>
-                      <li>
-                        <i class="fas fa-microphone"></i
-                        ><a href="tel:7263968850">+91 7263968850</a>
-                      </li>
-                      <li>
-                        <i class="fas fa-envelope"></i
-                        ><a href="deepaktirveer@ssdmultistate.com"
-                          >deepaktirveer@ssdmultistate.com</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <div class="auto-container">
-            <div class="inner-box clearfix">
-              <figure class="footer-logo">
-                <a href="index.html"
-                  ><img src="assets/images/RBM LOGO PNG-01.jpg" alt=""
-                /></a>
-              </figure>
-              <div class="copyright pull-left">
-                <p>
-                  <a href="index.html">RBM</a> &copy; 2023 All Right Reserved
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
       <!-- main-footer end -->
 
       <!--Scroll to top-->

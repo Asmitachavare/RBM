@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+
+    <title>Account Opening</title>
+
+    <!-- Fav Icon -->
+    <link rel="icon" href="assets/images/logo.jpg" type="image/x-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
+    <link href="assets/css/font-awesome-all.css" rel="stylesheet" />
+    <link href="assets/css/flaticon.css" rel="stylesheet" />
+    <link href="assets/css/owl.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <link href="assets/css/jquery-ui.css" rel="stylesheet" />
+    <link href="assets/css/nice-select.css" rel="stylesheet" />
+    <link
+      href="assets/css/color/theme-color.css"
+      id="jssDefault"
+      rel="stylesheet"
+    />
+    <link href="assets/css/switcher-style.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/responsive.css" rel="stylesheet" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-7ZDHJZCXXS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-7ZDHJZCXXS");
+    </script>
+   
+
+  <style>
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 50px;
+
+    }
+
+
+    .floating-button {
+  padding: 10px;
+  border-radius: 5px;
+  animation: pulse 1s infinite;
+}
+
+
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.floating-button:after, 
+.floating-button:before {
+  width: 100%;
+  height: 100%;
+  border-radius: 5%;
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+   -webkit-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+   -webkit-animation-delay: .9s;
+   animation-delay: .9s;
+   content: "";
+   position: absolute;
+   -webkit-box-shadow: 0 0 0 0 rgba(235, 98, 35, 0.9);
+   box-shadow: 0 0 0 0 rgba(224, 65, 37, 0.9);
+   -webkit-animation: ripple 3s infinite;
+   animation: ripple 3s infinite;
+   -webkit-transition: all .4s ease;
+   transition: all .4s ease;
+}
+.floating-button:after {
+  -webkit-animation-delay: .6s;
+  animation-delay: .6s;
+}
+  </style>
+
+  </head>
+
+  <!-- page wrapper -->
+  <body>
+    <div class="boxed_wrapper">
+      <!-- preloader -->
+      <div class="loader-wrap">
+        <div class="preloader">
+          <div class="preloader-close"><i class="far fa-times"></i></div>
+          <div id="handle-preloader" class="handle-preloader">
+            <div class="animation-preloader">
+              <div class="spinner"></div>
+              <div class="txt-loading">
+                <span data-text-preloader="A" class="letters-loading"> A </span>
+                <span data-text-preloader="R" class="letters-loading"> R </span>
+                <span data-text-preloader="B" class="letters-loading"> B </span>
+                <span data-text-preloader="M" class="letters-loading"> M </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- preloader end -->
+
+      <!-- main header -->
+    
+      <header class="main-header">
+        <!-- header-top -->
+        <!-- header-lower -->
+        <div class="header-lower">
+          <div class="outer-box">
+            <div class="main-box">
+              <div class="logo-box">
+                <figure class="logo">
+                  <a href="index.html"
+                    ><img src="assets/images/rbm.png" alt="" width= "117%" height="70px" /></a>
+                </figure>
+              </div>
+              <div class="menu-area clearfix">
+                <!--Mobile Navigation Toggler-->
+                <div class="mobile-nav-toggler">
+                  <i class="icon-bar"></i>
+                  <i class="icon-bar"></i>
+                  <i class="icon-bar"></i>
+                </div>
+                <nav class="main-menu navbar-expand-md navbar-light">
+                  <div
+                    class="collapse navbar-collapse show clearfix"
+                    id="navbarSupportedContent"
+                  >
+                    <ul class="navigation clearfix">
+                      <li>
+                        <a href="http://rbm.aitpro.in/">
+                          <button class="floating-button text-light" style="background-color: #ff4800;">RealTech
+                          </button></a>            
+                          </li>
+                      <li class="">
+                        <a href="index.html"><span>Home</span></a>
+                      </li>
+                      
+                      <!-- <li class="">
+                        <a href="about.html"><span>About us</span></a>
+                      </li>
+                      <li class="">
+                        <a href="why.html"><span>Why Choose Us</span></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="services.html"><span>Services</span></a>
+                        <ul>
+                          <li><a href="dev.html">For Developers</a></li>
+                          <li><a href="invest.html">For Investors</a></li>
+                        </ul>
+                      </li> -->
+                      <li class="">
+                        <a href="dev.html"><span>Builders & Developers</span></a>
+                      </li>
+                      <li class="">
+                        <a href="invest.html"><span>Buyers & Investors</span></a>
+                      </li>
+                      <!-- <li class="">
+                        <a href="property-grid.html"><span>Projects</span></a>
+                      </li> -->
+                      <!-- <li class="dropdown">
+                        <a href="services.html"><span>Internet Banking</span></a>
+                        <ul>
+                          <li><a href="">Account Openning</a></li>
+                          <li><a href="https://banking.ssdmultistate.com/login">Net Banking</a></li>
+                        </ul>
+                      </li> -->
+                      <li class="">
+                        <a href="https://ssdmultistate.com/"><span>SSD Multistate</span></a>
+                      </li>
+                      <!-- <li class="">
+                        <a href="https://prop.vu/the_leisure_lagoons"><span>Virtual Projects Tour</span></a>
+                      </li> -->
+                      <!-- <li class="dropdown">
+                        <a href="services.html"><span>Fintech</span></a>
+                        <ul>
+                          <li><a href="">Account Openning</a></li>
+                          <li><a href="https://http://rbm.aitpro.in">Digital Investment Dashboard</a></li>
+                        </ul>
+                      </li> -->
+                      <li>
+                        <a href="contact.html"><span>Contact</span></a>
+                      </li>
+                    
+                      <!-- <li class="  " >
+                      <a href="http://rbm.aitpro.in/">
+                        <button class="btn pl-2 floating-button text-light" style="background-color: #ff4800;" ><span>Fintech</span></button> 
+                      </a>
+                      </li> -->
+                     
+                      </ul>
+                      
+                    </ul>
+                    
+                    <!-- <div class="dropdown">
+                      <button class="dropbtn floating-button" style="right: -856px;top:-104px; background-color: #ff4800;">Fintech</button>
+                      <div class="dropdown-content" style="right:-875 !important;">
+                        <a href="#">Account Opening</a>
+                        <a href="#">Net Banking</a>
+                      </div>
+                    </div> -->
+
+                   
+            
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--sticky Header-->
+        <div class="sticky-header">
+          <div class="outer-box">
+            <div class="main-box">
+              <div class="logo-box">
+                <figure class="logo">
+                  <a href="index.html"
+                    ><img src="assets/images/rbm.png" alt=""width= "117%" height="70px"
+                  /></a>
+                </figure>
+              </div>
+             
+              <div class="menu-area clearfix">
+                <nav class="main-menu clearfix">
+                  <!--Keep This Empty / Menu will come through Javascript-->
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- main-header end -->
+
+      <!-- Mobile Menu  -->
+      <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn"><i class="fas fa-times"></i></div>
+
+        <nav class="menu-box">
+          <div class="nav-logo">
+            <a href="index.html"
+              ><img src="assets/images/RBM LOGO PNG-01.jpg" alt="" title=""
+            /></a>
+          </div>
+          <div class="menu-outer">
+            <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+          </div>
+          <div class="contact-info">
+            <h4>Contact Info</h4>
+            <ul>
+              <li>Navale Icon, Pune City</li>
+              <li><a href="tel:7263968850">+91 7263968850</a></li>
+              <li>
+                <a href="deepaktirveer@ssdmultistate.com"
+                  >deepaktirveer@ssdmultistate.com</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="social-links">
+            <ul class="clearfix">
+              <li>
+                <a
+                  href=" https://www.facebook.com/profile.php?id=100091671716534"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/94208437"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/@aarohiinfofimangement/playlists"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/realestate_banking_management/"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <!-- End Mobile Menu -->
+
+
+      <!-- contact-section -->
+      <section class="contact-section bg-color-1">
+        <div class="auto-container">
+           
+
+                <div class="pagetitle">
+                  <h1>Account Opening</h1>
+                  <nav>
+                   
+                  </nav>
+                </div><!-- End Page Title -->
+            
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+            
+                      <!-- No Labels Form -->
+                      <div class="row mt-3 flex-column">
+                        <div class="col-sm-6">
+                            <fieldset class="row mb-3">
+                                <legend class="col-form-label col-sm-4 pt-0">Select Category</legend>
+                                <div class="col-sm-10">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="accountTypeRadios" id="savingRadios" value="Saving" checked>
+                                        <label class="form-check-label" for="savingRadios">Developer</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="accountTypeRadios" id="currentRadios" value="Current">
+                                        <label class="form-check-label" for="currentRadios">Investor Buyer</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                    
+                        
+                    </div>
+                      
+                      <form id="savingForm" style="display: none;" class="p-3"  >
+                        
+        
+                        <div class="row mb-4 mt-3">
+                         
+                          <label for="inputEmail3" class="col-sm-2 col-form-label"> Name</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control" id="inputText" placeholder="Select name">
+                          </div>
+                        </div>
+                        
+            
+                        <!-- <h4 class="text-center mb-5 mt-5" >Member's Info</h4> -->
+            
+                        
+                      
+            
+                        
+                        
+                        <div class="row mb-3 mt-3">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Email ID</label>
+                            <div class="col-sm-4">
+                              <input type="email" class="form-control" id="inputText" placeholder="Enter Email">
+                            </div>
+                            
+                        </div>
+                        <div class="row mb-3 mt-3">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Phone Number</label>
+                            <div class="col-sm-4">
+                              <input type="text" class="form-control" id="inputText" placeholder="Enter Email">
+                            </div>
+                            
+                        </div>
+                        <div class="row mb-3 mt-3">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Location</label>
+                            <div class="col-sm-4">
+                              <input type="text" class="form-control" id="inputText" placeholder="Enter Email">
+                            </div>
+                            
+                        </div>
+                        
+                       
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-success">Open Account</button>
+                          <button type="submit" class="btn btn-danger">Cancel</button>
+                          <button type="reset" class="btn btn-warning">Reset</button>
+                        </div>
+                      </form><!-- End Horizontal Form -->
+            
+                      
+                      
+                      <form id="currentForm" style="display: none;" class="p-3" >
+                        
+                        <div class="row mb-4 mt-3">
+                         
+                            <label for="inputEmail3" class="col-sm-2 col-form-label"> Name</label>
+                            <div class="col-sm-4">
+                              <input type="text" class="form-control" id="inputText" placeholder="Select name">
+                            </div>
+                          </div>
+                          
+                          <div class="row mb-4 mt-3">
+                         
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Firm Name</label>
+                            <div class="col-sm-4">
+                              <input type="text" class="form-control" id="inputText" placeholder="Select name">
+                            </div>
+                          </div>
+                          <!-- <h4 class="text-center mb-5 mt-5" >Member's Info</h4> -->
+              
+                          
+                        
+              
+                          
+                          
+                          <div class="row mb-3 mt-3">
+                              <label for="inputEmail3" class="col-sm-2 col-form-label">Email ID</label>
+                              <div class="col-sm-4">
+                                <input type="email" class="form-control" id="inputText" placeholder="Enter Email">
+                              </div>
+                              
+                          </div>
+                          <div class="row mb-3 mt-3">
+                              <label for="inputEmail3" class="col-sm-2 col-form-label">Phone Number</label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="inputText" placeholder="Enter Email">
+                              </div>
+                              
+                          </div>
+                          <div class="row mb-3 mt-3">
+                              <label for="inputEmail3" class="col-sm-2 col-form-label">Office Location</label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="inputText" placeholder="Enter Email">
+                              </div>
+                              
+                          </div>
+                          
+                         
+                          <div class="text-center mt-3">
+                              <button type="submit" class="btn btn-success">Open Account</button>
+                            <button type="submit" class="btn btn-danger">Cancel</button>
+                            <button type="reset" class="btn btn-warning">Reset</button>
+                          </div>
+                      </form>
+        
+        
+                    </div>
+                  </div>
+            
+            
+            
+                  <script>
+                    // JavaScript to toggle the visibility of the forms based on the selected radio button
+                    const savingRadios = document.getElementById('savingRadios');
+                    const currentRadios = document.getElementById('currentRadios');
+                    const savingForm = document.getElementById('savingForm');
+                    const currentForm = document.getElementById('currentForm');
+                
+                    savingRadios.addEventListener('change', () => {
+                        if (savingRadios.checked) {
+                            savingForm.style.display = 'block';
+                            currentForm.style.display = 'none';
+                        }
+                    });
+                
+                    currentRadios.addEventListener('change', () => {
+                        if (currentRadios.checked) {
+                            savingForm.style.display = 'none';
+                            currentForm.style.display = 'block';
+                        }
+                    });
+                </script>
+            
+            
+            
+        </div>
+      </section>
+      <!-- contact-section end -->
+
+     
+      <!-- main-footer -->
+      <footer class="main-footer">
+
+        <div class="footer-bottom">
+          <div class="row">
+            <div class="col-lg-2 col-12 d-flex justify-content-center align-items-center my-2 flex-column">
+             <img src="./assets/images/rbm.png" class="footer-logo-img">
+              <div class="ml-2">
+                <a href=" https://www.facebook.com/profile.php?id=100091671716534"><i
+                  class="fab fa-facebook-f m-1" style="color: #0b2032;"></i></a>
+      <a href="https://www.linkedin.com/company/94208437">
+        <i class="fab fa-linkedin m-1"  style="color: #0b2032;"></i></a>
+    <a href="https://www.youtube.com/@aarohiinfofimangement/playlists"><i
+                  class="fab fa-youtube m-1"  style="color: #0b2032;"></i></a>
+      <a href="https://www.instagram.com/realestate_banking_management/"><i
+                  class="fab fa-instagram m-1"  style="color: #0b2032;"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-5 col-12 d-flex justify-content-center align-items-center my-2">
+              <p style="text-align: center;">
+                Sr. No 51/2A,
+                          Navale Icon 3rd floor Office No. 301, Opp Navale Bridge,
+                          Mumbai-Bangalore Highway, Narhe Pune, Maharashtra
+                          411041.
+              </p>
+            </div>
+  
+            <div class="col-lg-3 col-12 d-flex justify-content-center align-items-center my-2 text-center">
+              <ul>
+                <li>
+                  <i class="fas fa-microphone m-1"></i
+                  ><a href="tel:7263968850">+91 7263968850</a>
+                </li>
+                <li>
+                  <i class="fas fa-envelope m-1"></i
+                  ><a href="deepaktirveer@ssdmultistate.com"
+                    >deepaktirveer@ssdmultistate.com</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-2 col-12 d-flex justify-content-center align-items-center my-2">
+              <p style="font-size: 18px;font-weight: 500;">
+                Powered by AIT
+              </p>
+            </div>
+            
+          </div>
+        </div>
+      </footer> 
+     
+      <!-- main-footer end -->
+
+      <!--Scroll to top-->
+      <button class="scroll-top scroll-to-target" data-target="html">
+        <span class="fal fa-angle-up"></span>
+      </button>
+    </div>
+
+    <!-- jequery plugins -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/validation.js"></script>
+    <script src="assets/js/jquery.fancybox.js"></script>
+    <script src="assets/js/appear.js"></script>
+    <script src="assets/js/scrollbar.js"></script>
+    <script src="assets/js/isotope.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/jQuery.style.switcher.min.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/product-filter.js"></script>
+
+    <!-- map script -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-CE0deH3Jhj6GN4YvdCFZS7DpbXexzGU"></script>
+    <script src="assets/js/gmaps.js"></script>
+    <script src="assets/js/map-helper.js"></script>
+
+    <!-- main-js -->
+    <script src="assets/js/script.js"></script>
+  </body>
+  <!-- End of .page_wrapper -->
+</html>
